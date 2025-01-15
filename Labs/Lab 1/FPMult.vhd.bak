@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity FPMult is
+	port(
+	signA, signB, GClock, GReset : in std_logic;
+	MantissaA : in std_logic_vector(7 downto 0);
+	MantissaB : in std_logic_vector(7 downto 0);
+	ExponentA : in std_logic_vector(6 downto 0);
+	ExponentB : in std_logic_vector(6 downto 0);
+	signOut, Overflow : out std_logic;
+	MantissaOut : out std_logic_vector(7 downto 0);
+	ExponentOut : out std_logic_vector(6 downto 0);
+	)
+	
+	
