@@ -19,7 +19,7 @@ architecture rtl of FPMult is
 	-- Need internal signals for sign, exponent, and mantissa result
 	signal signRes : std_logic;
 	signal expRes : std_logic_vector(6 downto 0);
-	signal mantissaRes : std_logic_vector(7 downto 0);
+	signal mantissaRes : std_logic_vector(15 downto 0);
 	signal mantissaNormal : std_logic_vector(7 downto 0);
 	signal overflowFlag : std_logic;
 
@@ -36,6 +36,24 @@ architecture rtl of FPMult is
 			elsif RISING_EDGE(GClock) then
 				signRes <= signA XOR signB;
 				expRes <= std_logic_vector((signed(ExponentA)+signed(ExponentB))-127);
-				mantissaRes <= std_logic_vector(unsigned(MantissaA)*unsigned(MantissaB));
+				-- Check for overflow or underflow in exponent here
+				if(expRes < -126 or expRes > 127) then
+					overflowFlag <= '1';
+				end if;
+				mantissaRes <= std_logic_vector(unsigned(1 + MantissaA)*unsigned(1 + MantissaB));
+				-- Shift mantissa and exponent result until the msb of mantissa is equal to an integer 1
+					-- If larger than 1, shift left and decrement exponent
+					-- else, shift right and increment exponent
+				
+				
+				
+				-- Results
+				signOut <= signRes;
+				mantissaOut <= mantissaRes;
+				exponentOut <= expRes;
+				overflow <= overflowFlag;
+		end process;
+end rtl; 
+				
 				
 	
