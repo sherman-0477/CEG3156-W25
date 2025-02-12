@@ -1,0 +1,83 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity 8bitAdder is
+	port(
+		i_Ai, i_Bi : in std_logic_vector(7 downto 0);
+		o_CarryOut : out std_logic;
+		o_Sum : out std_logic_vector(7 downto 0);
+		);
+end 8bitAdder;
+
+architecture rtl of 8bitAdder is
+	signal int_Sum, int_CarryOut : std_logic_vector(7 downto 0);
+	
+	component onebitadder
+	port(
+		i_CarryIn : in std_logic;
+		i_Ai, i_Bi : in std_logic;
+		o_Sum, o_CarryOut out std_logic;
+	);
+	end component;
+	
+	begin
+	add7: onebitadder
+		port map (
+		i_CarryIn => '0',
+		i_Ai => i_Ai(7),
+		i_Bi => i_Bi(7),
+		o_Sum => int_Sum(7),
+		o_CarryOut => int_CarryOut(7));
+	add6: onebitadder
+		port map (
+		i_CarryIn => int_CarryOut(7),
+		i_Ai => i_Ai(6),
+		i_Bi => i_Bi(6),
+		o_Sum => int_Sum(6),
+		o_CarryOut => int_CarryOut(6));
+	add5: onebitadder
+		port map (
+		i_CarryIn => int_CarryOut(6),
+		i_Ai => i_Ai(5),
+		i_Bi => i_Bi(5),
+		o_Sum => int_Sum(5),
+		o_CarryOut => int_CarryOut(5));
+	add4: onebitadder
+		port map (
+		i_CarryIn => int_CarryOut(5),
+		i_Ai => i_Ai(4),
+		i_Bi => i_Bi(4),
+		o_Sum => int_Sum(4),
+		o_CarryOut => int_CarryOut(4));
+	add3: onebitadder
+		port map (
+		i_CarryIn => int_CarryOut(4),
+		i_Ai => i_Ai(3),
+		i_Bi => i_Bi(3),
+		o_Sum => int_Sum(3),
+		o_CarryOut => int_CarryOut(3));
+	add2: onebitadder
+		port map (
+		i_CarryIn => int_CarryOut(3),
+		i_Ai => i_Ai(2),
+		i_Bi => i_Bi(2),
+		o_Sum => int_Sum(2),
+		o_CarryOut => int_CarryOut(2));
+	add1: onebitadder
+		port map (
+			i_CarryIn => int_CarryOut(2),
+		i_Ai => i_Ai(1),
+		i_Bi => i_Bi(1),
+		o_Sum => int_Sum(1),
+		o_CarryOut => int_CarryOut(1));
+	add0: onebitadder
+		port map (
+		i_CarryIn => int_CarryOut(1),
+		i_Ai => i_Ai(0),
+		i_Bi => i_Bi(0),
+		o_Sum => int_Sum(0),
+		o_CarryOut => int_CarryOut(0));
+		
+	o_sum <= int_Sum;
+	o_carryOut <= int_CarryOut(0);
+end rtl;

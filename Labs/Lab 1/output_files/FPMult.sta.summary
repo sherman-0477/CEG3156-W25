@@ -1,0 +1,101 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'GReset'
+Slack : -4.225
+TNS   : -45.123
+
+Type  : Slow 1200mV 85C Model Setup 'GClock'
+Slack : -4.179
+TNS   : -44.928
+
+Type  : Slow 1200mV 85C Model Hold 'GClock'
+Slack : 0.717
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'GReset'
+Slack : 1.674
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'GClock'
+Slack : -0.462
+TNS   : -6.244
+
+Type  : Slow 1200mV 85C Model Removal 'GClock'
+Slack : 0.320
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GClock'
+Slack : -3.000
+TNS   : -42.835
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GReset'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Setup 'GReset'
+Slack : -3.808
+TNS   : -40.447
+
+Type  : Slow 1200mV 0C Model Setup 'GClock'
+Slack : -3.616
+TNS   : -39.356
+
+Type  : Slow 1200mV 0C Model Hold 'GClock'
+Slack : 0.677
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'GReset'
+Slack : 1.559
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'GClock'
+Slack : -0.363
+TNS   : -4.838
+
+Type  : Slow 1200mV 0C Model Removal 'GClock'
+Slack : 0.376
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GClock'
+Slack : -3.000
+TNS   : -42.835
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GReset'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Setup 'GClock'
+Slack : -1.529
+TNS   : -15.402
+
+Type  : Fast 1200mV 0C Model Setup 'GReset'
+Slack : -1.514
+TNS   : -14.451
+
+Type  : Fast 1200mV 0C Model Hold 'GClock'
+Slack : 0.323
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'GReset'
+Slack : 0.694
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'GClock'
+Slack : -0.329
+TNS   : -4.390
+
+Type  : Fast 1200mV 0C Model Removal 'GClock'
+Slack : 0.007
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GClock'
+Slack : -3.000
+TNS   : -35.880
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GReset'
+Slack : -3.000
+TNS   : -3.623
+
+------------------------------------------------------------

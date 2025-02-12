@@ -1,0 +1,671 @@
+|FPMult
+signA => register8bit:signAndExpA.input[7]
+signB => register8bit:signAndExpB.input[7]
+GClock => register8bit:signAndExpA.clk
+GClock => int_expSumBiasedShifted[0].CLK
+GClock => int_expSumBiasedShifted[1].CLK
+GClock => int_expSumBiasedShifted[2].CLK
+GClock => int_expSumBiasedShifted[3].CLK
+GClock => int_expSumBiasedShifted[4].CLK
+GClock => int_expSumBiasedShifted[5].CLK
+GClock => int_expSumBiasedShifted[6].CLK
+GClock => int_expSumBiasedShifted[7].CLK
+GClock => int_mantResNormalised[8].CLK
+GClock => int_mantResNormalised[9].CLK
+GClock => int_mantResNormalised[10].CLK
+GClock => int_mantResNormalised[11].CLK
+GClock => int_mantResNormalised[12].CLK
+GClock => int_mantResNormalised[13].CLK
+GClock => int_mantResNormalised[14].CLK
+GClock => int_mantResNormalised[15].CLK
+GClock => register8bit:signAndExpB.clk
+GClock => register8bit:mantissaARegister.clk
+GClock => register8bit:mantissaBRegister.clk
+GReset => register8bit:signAndExpA.reset
+GReset => int_expSumBiasedShifted[0].ALOAD
+GReset => int_expSumBiasedShifted[1].ALOAD
+GReset => int_expSumBiasedShifted[2].ALOAD
+GReset => int_expSumBiasedShifted[3].ALOAD
+GReset => int_expSumBiasedShifted[4].ALOAD
+GReset => int_expSumBiasedShifted[5].ALOAD
+GReset => int_expSumBiasedShifted[6].ALOAD
+GReset => int_expSumBiasedShifted[7].ALOAD
+GReset => int_mantResNormalised[8].ALOAD
+GReset => int_mantResNormalised[9].ALOAD
+GReset => int_mantResNormalised[10].ALOAD
+GReset => int_mantResNormalised[11].ALOAD
+GReset => int_mantResNormalised[12].ALOAD
+GReset => int_mantResNormalised[13].ALOAD
+GReset => int_mantResNormalised[14].ALOAD
+GReset => int_mantResNormalised[15].ALOAD
+GReset => register8bit:signAndExpB.reset
+GReset => register8bit:mantissaARegister.reset
+GReset => register8bit:mantissaBRegister.reset
+MantissaA[0] => register8bit:mantissaARegister.input[0]
+MantissaA[1] => register8bit:mantissaARegister.input[1]
+MantissaA[2] => register8bit:mantissaARegister.input[2]
+MantissaA[3] => register8bit:mantissaARegister.input[3]
+MantissaA[4] => register8bit:mantissaARegister.input[4]
+MantissaA[5] => register8bit:mantissaARegister.input[5]
+MantissaA[6] => register8bit:mantissaARegister.input[6]
+MantissaA[7] => register8bit:mantissaARegister.input[7]
+MantissaB[0] => register8bit:mantissaBRegister.input[0]
+MantissaB[1] => register8bit:mantissaBRegister.input[1]
+MantissaB[2] => register8bit:mantissaBRegister.input[2]
+MantissaB[3] => register8bit:mantissaBRegister.input[3]
+MantissaB[4] => register8bit:mantissaBRegister.input[4]
+MantissaB[5] => register8bit:mantissaBRegister.input[5]
+MantissaB[6] => register8bit:mantissaBRegister.input[6]
+MantissaB[7] => register8bit:mantissaBRegister.input[7]
+ExponentA[0] => register8bit:signAndExpA.input[0]
+ExponentA[1] => register8bit:signAndExpA.input[1]
+ExponentA[2] => register8bit:signAndExpA.input[2]
+ExponentA[3] => register8bit:signAndExpA.input[3]
+ExponentA[4] => register8bit:signAndExpA.input[4]
+ExponentA[5] => register8bit:signAndExpA.input[5]
+ExponentA[6] => register8bit:signAndExpA.input[6]
+ExponentB[0] => register8bit:signAndExpB.input[0]
+ExponentB[1] => register8bit:signAndExpB.input[1]
+ExponentB[2] => register8bit:signAndExpB.input[2]
+ExponentB[3] => register8bit:signAndExpB.input[3]
+ExponentB[4] => register8bit:signAndExpB.input[4]
+ExponentB[5] => register8bit:signAndExpB.input[5]
+ExponentB[6] => register8bit:signAndExpB.input[6]
+signOut <= signOut.DB_MAX_OUTPUT_PORT_TYPE
+Overflow <= int_expSumBiasedShifted[7].DB_MAX_OUTPUT_PORT_TYPE
+MantissaOut[0] <= int_mantResNormalised[8].DB_MAX_OUTPUT_PORT_TYPE
+MantissaOut[1] <= int_mantResNormalised[9].DB_MAX_OUTPUT_PORT_TYPE
+MantissaOut[2] <= int_mantResNormalised[10].DB_MAX_OUTPUT_PORT_TYPE
+MantissaOut[3] <= int_mantResNormalised[11].DB_MAX_OUTPUT_PORT_TYPE
+MantissaOut[4] <= int_mantResNormalised[12].DB_MAX_OUTPUT_PORT_TYPE
+MantissaOut[5] <= int_mantResNormalised[13].DB_MAX_OUTPUT_PORT_TYPE
+MantissaOut[6] <= int_mantResNormalised[14].DB_MAX_OUTPUT_PORT_TYPE
+MantissaOut[7] <= int_mantResNormalised[15].DB_MAX_OUTPUT_PORT_TYPE
+ExponentOut[0] <= int_expSumBiasedShifted[0].DB_MAX_OUTPUT_PORT_TYPE
+ExponentOut[1] <= int_expSumBiasedShifted[1].DB_MAX_OUTPUT_PORT_TYPE
+ExponentOut[2] <= int_expSumBiasedShifted[2].DB_MAX_OUTPUT_PORT_TYPE
+ExponentOut[3] <= int_expSumBiasedShifted[3].DB_MAX_OUTPUT_PORT_TYPE
+ExponentOut[4] <= int_expSumBiasedShifted[4].DB_MAX_OUTPUT_PORT_TYPE
+ExponentOut[5] <= int_expSumBiasedShifted[5].DB_MAX_OUTPUT_PORT_TYPE
+ExponentOut[6] <= int_expSumBiasedShifted[6].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpA
+reset => ~NO_FANOUT~
+clk => enardFF_2:P0.i_clock
+clk => enardFF_2:P1.i_clock
+clk => enardFF_2:P2.i_clock
+clk => enardFF_2:P3.i_clock
+clk => enardFF_2:P4.i_clock
+clk => enardFF_2:P5.i_clock
+clk => enardFF_2:P6.i_clock
+clk => enardFF_2:P7.i_clock
+input[0] => enardFF_2:P0.i_d
+input[1] => enardFF_2:P1.i_d
+input[2] => enardFF_2:P2.i_d
+input[3] => enardFF_2:P3.i_d
+input[4] => enardFF_2:P4.i_d
+input[5] => enardFF_2:P5.i_d
+input[6] => enardFF_2:P6.i_d
+input[7] => enardFF_2:P7.i_d
+output[0] <= enardFF_2:P0.o_q
+output[1] <= enardFF_2:P1.o_q
+output[2] <= enardFF_2:P2.o_q
+output[3] <= enardFF_2:P3.o_q
+output[4] <= enardFF_2:P4.o_q
+output[5] <= enardFF_2:P5.o_q
+output[6] <= enardFF_2:P6.o_q
+output[7] <= enardFF_2:P7.o_q
+
+
+|FPMult|register8bit:signAndExpA|enARdFF_2:P0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpA|enARdFF_2:P1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpA|enARdFF_2:P2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpA|enARdFF_2:P3
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpA|enARdFF_2:P4
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpA|enARdFF_2:P5
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpA|enARdFF_2:P6
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpA|enARdFF_2:P7
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpB
+reset => ~NO_FANOUT~
+clk => enardFF_2:P0.i_clock
+clk => enardFF_2:P1.i_clock
+clk => enardFF_2:P2.i_clock
+clk => enardFF_2:P3.i_clock
+clk => enardFF_2:P4.i_clock
+clk => enardFF_2:P5.i_clock
+clk => enardFF_2:P6.i_clock
+clk => enardFF_2:P7.i_clock
+input[0] => enardFF_2:P0.i_d
+input[1] => enardFF_2:P1.i_d
+input[2] => enardFF_2:P2.i_d
+input[3] => enardFF_2:P3.i_d
+input[4] => enardFF_2:P4.i_d
+input[5] => enardFF_2:P5.i_d
+input[6] => enardFF_2:P6.i_d
+input[7] => enardFF_2:P7.i_d
+output[0] <= enardFF_2:P0.o_q
+output[1] <= enardFF_2:P1.o_q
+output[2] <= enardFF_2:P2.o_q
+output[3] <= enardFF_2:P3.o_q
+output[4] <= enardFF_2:P4.o_q
+output[5] <= enardFF_2:P5.o_q
+output[6] <= enardFF_2:P6.o_q
+output[7] <= enardFF_2:P7.o_q
+
+
+|FPMult|register8bit:signAndExpB|enARdFF_2:P0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpB|enARdFF_2:P1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpB|enARdFF_2:P2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpB|enARdFF_2:P3
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpB|enARdFF_2:P4
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpB|enARdFF_2:P5
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpB|enARdFF_2:P6
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:signAndExpB|enARdFF_2:P7
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaARegister
+reset => ~NO_FANOUT~
+clk => enardFF_2:P0.i_clock
+clk => enardFF_2:P1.i_clock
+clk => enardFF_2:P2.i_clock
+clk => enardFF_2:P3.i_clock
+clk => enardFF_2:P4.i_clock
+clk => enardFF_2:P5.i_clock
+clk => enardFF_2:P6.i_clock
+clk => enardFF_2:P7.i_clock
+input[0] => enardFF_2:P0.i_d
+input[1] => enardFF_2:P1.i_d
+input[2] => enardFF_2:P2.i_d
+input[3] => enardFF_2:P3.i_d
+input[4] => enardFF_2:P4.i_d
+input[5] => enardFF_2:P5.i_d
+input[6] => enardFF_2:P6.i_d
+input[7] => enardFF_2:P7.i_d
+output[0] <= enardFF_2:P0.o_q
+output[1] <= enardFF_2:P1.o_q
+output[2] <= enardFF_2:P2.o_q
+output[3] <= enardFF_2:P3.o_q
+output[4] <= enardFF_2:P4.o_q
+output[5] <= enardFF_2:P5.o_q
+output[6] <= enardFF_2:P6.o_q
+output[7] <= enardFF_2:P7.o_q
+
+
+|FPMult|register8bit:mantissaARegister|enARdFF_2:P0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaARegister|enARdFF_2:P1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaARegister|enARdFF_2:P2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaARegister|enARdFF_2:P3
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaARegister|enARdFF_2:P4
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaARegister|enARdFF_2:P5
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaARegister|enARdFF_2:P6
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaARegister|enARdFF_2:P7
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaBRegister
+reset => ~NO_FANOUT~
+clk => enardFF_2:P0.i_clock
+clk => enardFF_2:P1.i_clock
+clk => enardFF_2:P2.i_clock
+clk => enardFF_2:P3.i_clock
+clk => enardFF_2:P4.i_clock
+clk => enardFF_2:P5.i_clock
+clk => enardFF_2:P6.i_clock
+clk => enardFF_2:P7.i_clock
+input[0] => enardFF_2:P0.i_d
+input[1] => enardFF_2:P1.i_d
+input[2] => enardFF_2:P2.i_d
+input[3] => enardFF_2:P3.i_d
+input[4] => enardFF_2:P4.i_d
+input[5] => enardFF_2:P5.i_d
+input[6] => enardFF_2:P6.i_d
+input[7] => enardFF_2:P7.i_d
+output[0] <= enardFF_2:P0.o_q
+output[1] <= enardFF_2:P1.o_q
+output[2] <= enardFF_2:P2.o_q
+output[3] <= enardFF_2:P3.o_q
+output[4] <= enardFF_2:P4.o_q
+output[5] <= enardFF_2:P5.o_q
+output[6] <= enardFF_2:P6.o_q
+output[7] <= enardFF_2:P7.o_q
+
+
+|FPMult|register8bit:mantissaBRegister|enARdFF_2:P0
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaBRegister|enARdFF_2:P1
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaBRegister|enARdFF_2:P2
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaBRegister|enARdFF_2:P3
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaBRegister|enARdFF_2:P4
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaBRegister|enARdFF_2:P5
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaBRegister|enARdFF_2:P6
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|register8bit:mantissaBRegister|enARdFF_2:P7
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|adder8bit:expSum
+i_Ai[0] => onebitadder:eightBitAdderGenerator:0:adder_i.i_Ai
+i_Ai[1] => onebitadder:eightBitAdderGenerator:1:adder_i.i_Ai
+i_Ai[2] => onebitadder:eightBitAdderGenerator:2:adder_i.i_Ai
+i_Ai[3] => onebitadder:eightBitAdderGenerator:3:adder_i.i_Ai
+i_Ai[4] => onebitadder:eightBitAdderGenerator:4:adder_i.i_Ai
+i_Ai[5] => onebitadder:eightBitAdderGenerator:5:adder_i.i_Ai
+i_Ai[6] => onebitadder:eightBitAdderGenerator:6:adder_i.i_Ai
+i_Ai[7] => onebitadder:eightBitAdderGenerator:7:adder_i.i_Ai
+i_Bi[0] => onebitadder:eightBitAdderGenerator:0:adder_i.i_Bi
+i_Bi[1] => onebitadder:eightBitAdderGenerator:1:adder_i.i_Bi
+i_Bi[2] => onebitadder:eightBitAdderGenerator:2:adder_i.i_Bi
+i_Bi[3] => onebitadder:eightBitAdderGenerator:3:adder_i.i_Bi
+i_Bi[4] => onebitadder:eightBitAdderGenerator:4:adder_i.i_Bi
+i_Bi[5] => onebitadder:eightBitAdderGenerator:5:adder_i.i_Bi
+i_Bi[6] => onebitadder:eightBitAdderGenerator:6:adder_i.i_Bi
+i_Bi[7] => onebitadder:eightBitAdderGenerator:7:adder_i.i_Bi
+i_CarryIn => onebitadder:eightBitAdderGenerator:0:adder_i.i_CarryIn
+o_CarryOut <= onebitadder:eightBitAdderGenerator:7:adder_i.o_CarryOut
+o_Sum[0] <= onebitadder:eightBitAdderGenerator:0:adder_i.o_Sum
+o_Sum[1] <= onebitadder:eightBitAdderGenerator:1:adder_i.o_Sum
+o_Sum[2] <= onebitadder:eightBitAdderGenerator:2:adder_i.o_Sum
+o_Sum[3] <= onebitadder:eightBitAdderGenerator:3:adder_i.o_Sum
+o_Sum[4] <= onebitadder:eightBitAdderGenerator:4:adder_i.o_Sum
+o_Sum[5] <= onebitadder:eightBitAdderGenerator:5:adder_i.o_Sum
+o_Sum[6] <= onebitadder:eightBitAdderGenerator:6:adder_i.o_Sum
+o_Sum[7] <= onebitadder:eightBitAdderGenerator:7:adder_i.o_Sum
+
+
+|FPMult|adder8bit:expSum|oneBitAdder:\eightBitAdderGenerator:0:adder_i
+i_CarryIn => int_CarryOut3.IN0
+i_CarryIn => int_CarryOut1.IN0
+i_Ai => int_CarryOut3.IN1
+i_Ai => int_CarryOut1.IN1
+i_Bi => int_CarryOut2.IN1
+i_Bi => o_Sum.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|adder8bit:expSum|oneBitAdder:\eightBitAdderGenerator:1:adder_i
+i_CarryIn => int_CarryOut3.IN0
+i_CarryIn => int_CarryOut1.IN0
+i_Ai => int_CarryOut3.IN1
+i_Ai => int_CarryOut1.IN1
+i_Bi => int_CarryOut2.IN1
+i_Bi => o_Sum.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|adder8bit:expSum|oneBitAdder:\eightBitAdderGenerator:2:adder_i
+i_CarryIn => int_CarryOut3.IN0
+i_CarryIn => int_CarryOut1.IN0
+i_Ai => int_CarryOut3.IN1
+i_Ai => int_CarryOut1.IN1
+i_Bi => int_CarryOut2.IN1
+i_Bi => o_Sum.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|adder8bit:expSum|oneBitAdder:\eightBitAdderGenerator:3:adder_i
+i_CarryIn => int_CarryOut3.IN0
+i_CarryIn => int_CarryOut1.IN0
+i_Ai => int_CarryOut3.IN1
+i_Ai => int_CarryOut1.IN1
+i_Bi => int_CarryOut2.IN1
+i_Bi => o_Sum.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|adder8bit:expSum|oneBitAdder:\eightBitAdderGenerator:4:adder_i
+i_CarryIn => int_CarryOut3.IN0
+i_CarryIn => int_CarryOut1.IN0
+i_Ai => int_CarryOut3.IN1
+i_Ai => int_CarryOut1.IN1
+i_Bi => int_CarryOut2.IN1
+i_Bi => o_Sum.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|adder8bit:expSum|oneBitAdder:\eightBitAdderGenerator:5:adder_i
+i_CarryIn => int_CarryOut3.IN0
+i_CarryIn => int_CarryOut1.IN0
+i_Ai => int_CarryOut3.IN1
+i_Ai => int_CarryOut1.IN1
+i_Bi => int_CarryOut2.IN1
+i_Bi => o_Sum.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|adder8bit:expSum|oneBitAdder:\eightBitAdderGenerator:6:adder_i
+i_CarryIn => int_CarryOut3.IN0
+i_CarryIn => int_CarryOut1.IN0
+i_Ai => int_CarryOut3.IN1
+i_Ai => int_CarryOut1.IN1
+i_Bi => int_CarryOut2.IN1
+i_Bi => o_Sum.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|adder8bit:expSum|oneBitAdder:\eightBitAdderGenerator:7:adder_i
+i_CarryIn => int_CarryOut3.IN0
+i_CarryIn => int_CarryOut1.IN0
+i_Ai => int_CarryOut3.IN1
+i_Ai => int_CarryOut1.IN1
+i_Bi => int_CarryOut2.IN1
+i_Bi => o_Sum.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|subtractor8bit:expBiased
+i_Ai[0] => Add0.IN16
+i_Ai[1] => Add0.IN15
+i_Ai[2] => Add0.IN14
+i_Ai[3] => Add0.IN13
+i_Ai[4] => Add0.IN12
+i_Ai[5] => Add0.IN11
+i_Ai[6] => Add0.IN10
+i_Ai[7] => Add0.IN9
+i_Bi[0] => Add0.IN8
+i_Bi[1] => Add0.IN7
+i_Bi[2] => Add0.IN6
+i_Bi[3] => Add0.IN5
+i_Bi[4] => Add0.IN4
+i_Bi[5] => Add0.IN3
+i_Bi[6] => Add0.IN2
+i_Bi[7] => Add0.IN1
+o_Diff[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+o_Diff[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+o_Diff[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+o_Diff[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+o_Diff[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+o_Diff[5] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+o_Diff[6] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+o_Diff[7] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPMult|multiplier16bit:mantResult
+i_A[0] => Mult0.IN7
+i_A[1] => Mult0.IN6
+i_A[2] => Mult0.IN5
+i_A[3] => Mult0.IN4
+i_A[4] => Mult0.IN3
+i_A[5] => Mult0.IN2
+i_A[6] => Mult0.IN1
+i_A[7] => Mult0.IN0
+i_B[0] => Mult0.IN15
+i_B[1] => Mult0.IN14
+i_B[2] => Mult0.IN13
+i_B[3] => Mult0.IN12
+i_B[4] => Mult0.IN11
+i_B[5] => Mult0.IN10
+i_B[6] => Mult0.IN9
+i_B[7] => Mult0.IN8
+o_P[0] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[1] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[2] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[3] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[4] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[5] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[6] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[7] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[8] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[9] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[10] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[11] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[12] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[13] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[14] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+o_P[15] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+
+
