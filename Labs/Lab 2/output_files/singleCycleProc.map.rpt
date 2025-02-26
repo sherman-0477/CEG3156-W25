@@ -1,5 +1,5 @@
 Analysis & Synthesis report for singleCycleProc
-Tue Feb 25 23:02:00 2025
+Wed Feb 26 14:38:44 2025
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Feb 25 23:02:00 2025          ;
+; Analysis & Synthesis Status        ; Failed - Wed Feb 26 14:38:44 2025          ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; singleCycleProc                            ;
 ; Top-level Entity Name              ; singleCycleProc                            ;
@@ -157,14 +157,54 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Feb 25 23:01:59 2025
+    Info: Processing started: Wed Feb 26 14:38:42 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off singleCycleProc -c singleCycleProc
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Error (12007): Top-level design entity "singleCycleProc" is undefined
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4604 megabytes
-    Error: Processing ended: Tue Feb 25 23:02:00 2025
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:00
+Info (12021): Found 2 design units, including 1 entities, in source file onebitadder.vhd
+    Info (12022): Found design unit 1: oneBitAdder-rtl
+    Info (12023): Found entity 1: oneBitAdder
+Error (10500): VHDL syntax error at singleCycleProc.vhd(12) near text ")";  expecting an identifier, or "constant", or "file", or "signal", or "variable" File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/singleCycleProc.vhd Line: 12
+Info (12021): Found 0 design units, including 0 entities, in source file singlecycleproc.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file signextend16to32.vhd
+    Info (12022): Found design unit 1: signExtend16to32-rtl
+    Info (12023): Found entity 1: signExtend16to32
+Info (12021): Found 2 design units, including 1 entities, in source file mux2to1.vhd
+    Info (12022): Found design unit 1: mux2to1-rtl
+    Info (12023): Found entity 1: mux2to1
+Info (12021): Found 2 design units, including 1 entities, in source file mux8_2to1.vhd
+    Info (12022): Found design unit 1: mux8_2to1-rtl
+    Info (12023): Found entity 1: mux8_2to1
+Info (12021): Found 2 design units, including 1 entities, in source file mux32_2to1.vhd
+    Info (12022): Found design unit 1: mux32_2to1-rtl
+    Info (12023): Found entity 1: mux32_2to1
+Info (12021): Found 2 design units, including 1 entities, in source file /users/sherm/onedrive/documents/github/ceg3156-w25/labs/lab 1/adder32bit.vhd
+    Info (12022): Found design unit 1: adder32bit-rtl
+    Info (12023): Found entity 1: adder32bit
+Info (12021): Found 1 design units, including 1 entities, in source file /users/sherm/onedrive/documents/github/ceg3156-w25/labs/lab 1/lsh2bitreg_32.vhd
+    Info (12023): Found entity 1: lsh2bitReg_32
+Error (10522): VHDL Syntax error at ALU.vhd(14): experienced unexpected end-of-file ;  expecting "begin", or a declaration statement File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 1/ALU.vhd Line: 14
+Info (12021): Found 0 design units, including 0 entities, in source file /users/sherm/onedrive/documents/github/ceg3156-w25/labs/lab 1/alu.vhd
+Error (10430): VHDL Primary Unit Declaration error at ALU.vhd(5): primary unit "ALU" already exists in library "work" File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/ALU.vhd Line: 5
+Error (10784): HDL error at ALU.vhd(5): see declaration for object "ALU" File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 1/ALU.vhd Line: 5
+Error (10500): VHDL syntax error at ALU.vhd(23) near text "mux8_8to1";  expecting "component" File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/ALU.vhd Line: 23
+Error (10500): VHDL syntax error at ALU.vhd(29) near text ")"; mismatched closing parenthesis  File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/ALU.vhd Line: 29
+Error (10500): VHDL syntax error at ALU.vhd(30) near text "eightBitComparator";  expecting "component" File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/ALU.vhd Line: 30
+Info (12021): Found 0 design units, including 0 entities, in source file alu.vhd
+Error (10500): VHDL syntax error at eightBitComparator.vhd(11) near text ")"; mismatched closing parenthesis  File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/eightBitComparator.vhd Line: 11
+Error (10500): VHDL syntax error at eightBitComparator.vhd(11) near text ";";  expecting "end", or "begin", or a declaration statement File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/eightBitComparator.vhd Line: 11
+Error (10523): Ignored construct eightBitComparator at eightBitComparator.vhd(7) due to previous errors File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/eightBitComparator.vhd Line: 7
+Error (10396): VHDL syntax error at eightBitComparator.vhd(45): name used in construct must match previously specified name "comparatorGenerate" File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/eightBitComparator.vhd Line: 45
+Info (12021): Found 0 design units, including 0 entities, in source file eightbitcomparator.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file mux8to1.vhd
+    Info (12022): Found design unit 1: mux8to1-rtl
+    Info (12023): Found entity 1: mux8to1
+Info (12021): Found 2 design units, including 1 entities, in source file mux8_8to1.vhd
+    Info (12022): Found design unit 1: mux8_8to1-rtl
+    Info (12023): Found entity 1: mux8_8to1
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 11 errors, 1 warning
+    Error: Peak virtual memory: 4652 megabytes
+    Error: Processing ended: Wed Feb 26 14:38:44 2025
+    Error: Elapsed time: 00:00:02
+    Error: Total CPU time (on all processors): 00:00:01
 
 
