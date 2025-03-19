@@ -45,6 +45,6 @@ begin
 	
 	o_GT <= int_GT(0);
    o_LT <= int_LT(0);
-   o_EQ <= NOT (o_GT OR o_LT);
+   o_EQ <= int_GT(0) nor int_LT(0);
 	
 end rtl;

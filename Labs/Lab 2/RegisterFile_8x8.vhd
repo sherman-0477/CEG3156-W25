@@ -20,7 +20,7 @@ ARCHITECTURE struct OF RegisterFile_8x8 IS
 	SIGNAL int_Reg3_out, int_Reg4_out, int_Reg5_out : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SIGNAL int_Reg6_out, int_Reg7_out : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
-	COMPONENT Register_8bit IS
+	COMPONENT register8bit IS
 		PORT (
 			in_Input : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 			in_clk, in_en, in_resetbar : IN STD_LOGIC;
@@ -33,7 +33,7 @@ ARCHITECTURE struct OF RegisterFile_8x8 IS
 			o_Output : OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
 	END COMPONENT;
 
-	COMPONENT MUX_8x1_8bit IS
+	COMPONENT mux8_8to1 IS
 		PORT (
 			i_SEL : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
 			i_p0 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -62,7 +62,7 @@ BEGIN
 		i_Input => in_Write_sel,
 		o_Output => int_Decoder_out);
 
-	Register0 : Register_8bit
+	Register0 : register8bit
 	PORT MAP(
 		in_Input => in_Write_Data,
 		in_clk => in_clk,
@@ -70,7 +70,7 @@ BEGIN
 		in_resetbar => in_resetbar,
 		o_Output => int_Reg0_out);
 
-	Register1 : Register_8bit
+	Register1 : register8bit
 	PORT MAP(
 		in_Input => in_Write_Data,
 		in_clk => in_clk,
@@ -78,7 +78,7 @@ BEGIN
 		in_resetbar => in_resetbar,
 		o_Output => int_Reg1_out);
 
-	Register2 : Register_8bit
+	Register2 : register8bit
 	PORT MAP(
 		in_Input => in_Write_Data,
 		in_clk => in_clk,
@@ -86,7 +86,7 @@ BEGIN
 		in_resetbar => in_resetbar,
 		o_Output => int_Reg2_out);
 
-	Register3 : Register_8bit
+	Register3 : register8bit
 	PORT MAP(
 		in_Input => in_Write_Data,
 		in_clk => in_clk,
@@ -94,7 +94,7 @@ BEGIN
 		in_resetbar => in_resetbar,
 		o_Output => int_Reg3_out);
 
-	Register4 : Register_8bit
+	Register4 : register8bit
 	PORT MAP(
 		in_Input => in_Write_Data,
 		in_clk => in_clk,
@@ -102,7 +102,7 @@ BEGIN
 		in_resetbar => in_resetbar,
 		o_Output => int_Reg4_out);
 
-	Register5 : Register_8bit
+	Register5 : register8bit
 	PORT MAP(
 		in_Input => in_Write_Data,
 		in_clk => in_clk,
@@ -110,7 +110,7 @@ BEGIN
 		in_resetbar => in_resetbar,
 		o_Output => int_Reg5_out);
 
-	Register6 : Register_8bit
+	Register6 : register8bit
 	PORT MAP(
 		in_Input => in_Write_Data,
 		in_clk => in_clk,
@@ -118,7 +118,7 @@ BEGIN
 		in_resetbar => in_resetbar,
 		o_Output => int_Reg6_out);
 
-	Register7 : Register_8bit
+	Register7 : register8bit
 	PORT MAP(
 		in_Input => in_Write_Data,
 		in_clk => in_clk,
@@ -126,7 +126,7 @@ BEGIN
 		in_resetbar => in_resetbar,
 		o_Output => int_Reg7_out);
 
-	Read_mux1 : MUX_8x1_8bit
+	Read_mux1 : mux8_8to1
 	PORT MAP(
 		i_SEL => in_Read1,
 		i_p0 => int_Reg0_out,
@@ -139,7 +139,7 @@ BEGIN
 		i_p7 => int_Reg7_out,
 		o_MUX => int_ReadData1);
 
-	Read_mux2 : MUX_8x1_8bit
+	Read_mux2 : mux8_8to1
 	PORT MAP(
 		i_SEL => in_Read2,
 		i_p0 => int_Reg0_out,

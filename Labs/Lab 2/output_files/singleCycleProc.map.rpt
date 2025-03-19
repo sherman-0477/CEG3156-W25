@@ -1,6 +1,6 @@
 Analysis & Synthesis report for singleCycleProc
-Wed Feb 26 14:38:44 2025
-Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Wed Mar 19 12:08:50 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -10,7 +10,39 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Source assignments for dataMem:DataMemory|altsyncram:altsyncram_component|altsyncram_h3g1:auto_generated
+ 12. Source assignments for instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated
+ 13. Parameter Settings for User Entity Instance: dataMem:DataMemory|altsyncram:altsyncram_component
+ 14. Parameter Settings for User Entity Instance: instrMem:MemoryInstruction|altsyncram:altsyncram_component
+ 15. altsyncram Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "controlUnit:CPUControlUnit"
+ 17. Port Connectivity Checks: "mux8_2to1:ALUOpMux"
+ 18. Port Connectivity Checks: "ALU:RegisterALU|mux8_8to1:ALUMUXSelect"
+ 19. Port Connectivity Checks: "ALU:RegisterALU|eightBitComparator:SLTResult|oneBitComparator:comp7"
+ 20. Port Connectivity Checks: "ALU:RegisterALU|eightBitComparator:SLTResult"
+ 21. Port Connectivity Checks: "ALU:RegisterALU"
+ 22. Port Connectivity Checks: "mux8_2to1:RegDstMux"
+ 23. Port Connectivity Checks: "instrMem:MemoryInstruction"
+ 24. Port Connectivity Checks: "RegisterFile_8x8:RegFile"
+ 25. Port Connectivity Checks: "dataMem:DataMemory"
+ 26. Port Connectivity Checks: "signExtend16to32:signExtend"
+ 27. Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_7"
+ 28. Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_6"
+ 29. Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_5"
+ 30. Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_4"
+ 31. Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_3"
+ 32. Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_2"
+ 33. Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_1"
+ 34. Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_0"
+ 35. Port Connectivity Checks: "register8bit:ProgramCounter"
+ 36. Elapsed Time Per Partition
+ 37. Analysis & Synthesis Messages
 
 
 
@@ -33,24 +65,24 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                    ;
-+------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Feb 26 14:38:44 2025          ;
-; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
-; Revision Name                      ; singleCycleProc                            ;
-; Top-level Entity Name              ; singleCycleProc                            ;
-; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
-+------------------------------------+--------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Mar 19 12:08:50 2025           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; singleCycleProc                                 ;
+; Top-level Entity Name              ; singleCycleProc                                 ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 49                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -146,9 +178,500 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 16     ;
+; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                       ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                                                                         ; Library ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; RegisterFile_8x8.vhd             ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/RegisterFile_8x8.vhd                                                                                                      ;         ;
+; register8bit.vhd                 ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/register8bit.vhd                                                                                                          ;         ;
+; onebitcomparator.vhd             ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/onebitcomparator.vhd                                                                                                      ;         ;
+; instrMem.vhd                     ; yes             ; User Wizard-Generated File             ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/instrMem.vhd                                                                                                              ;         ;
+; enardFF_2.vhd                    ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/enardFF_2.vhd                                                                                                             ;         ;
+; dataMem.vhd                      ; yes             ; User Wizard-Generated File             ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/dataMem.vhd                                                                                                               ;         ;
+; singleCycleProc.vhd              ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/singleCycleProc.vhd                                                                                                       ;         ;
+; signExtend16to32.vhd             ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/signExtend16to32.vhd                                                                                                      ;         ;
+; mux2to1.vhd                      ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/mux2to1.vhd                                                                                                               ;         ;
+; mux8_2to1.vhd                    ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/mux8_2to1.vhd                                                                                                             ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/ALU.vhd                                                                                                                   ;         ;
+; eightBitComparator.vhd           ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/eightBitComparator.vhd                                                                                                    ;         ;
+; mux8to1.vhd                      ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/mux8to1.vhd                                                                                                               ;         ;
+; mux8_8to1.vhd                    ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/mux8_8to1.vhd                                                                                                             ;         ;
+; controlUnit.vhd                  ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/controlUnit.vhd                                                                                                           ;         ;
+; ALUControlUnit.vhd               ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/ALUControlUnit.vhd                                                                                                        ;         ;
+; Decoder_3x8.vhd                  ; yes             ; User VHDL File                         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/Decoder_3x8.vhd                                                                                                           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/programdata/app-v/42a7790a-e852-4fd0-a846-61fbcbd0279a/f6001447-9727-4074-b939-1c3d5bbc9b4c/root/quartus_ii/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/programdata/app-v/42a7790a-e852-4fd0-a846-61fbcbd0279a/f6001447-9727-4074-b939-1c3d5bbc9b4c/root/quartus_ii/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/programdata/app-v/42a7790a-e852-4fd0-a846-61fbcbd0279a/f6001447-9727-4074-b939-1c3d5bbc9b4c/root/quartus_ii/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/programdata/app-v/42a7790a-e852-4fd0-a846-61fbcbd0279a/f6001447-9727-4074-b939-1c3d5bbc9b4c/root/quartus_ii/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                           ; c:/programdata/app-v/42a7790a-e852-4fd0-a846-61fbcbd0279a/f6001447-9727-4074-b939-1c3d5bbc9b4c/root/quartus_ii/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/programdata/app-v/42a7790a-e852-4fd0-a846-61fbcbd0279a/f6001447-9727-4074-b939-1c3d5bbc9b4c/root/quartus_ii/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/programdata/app-v/42a7790a-e852-4fd0-a846-61fbcbd0279a/f6001447-9727-4074-b939-1c3d5bbc9b4c/root/quartus_ii/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/programdata/app-v/42a7790a-e852-4fd0-a846-61fbcbd0279a/f6001447-9727-4074-b939-1c3d5bbc9b4c/root/quartus_ii/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/programdata/app-v/42a7790a-e852-4fd0-a846-61fbcbd0279a/f6001447-9727-4074-b939-1c3d5bbc9b4c/root/quartus_ii/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_h3g1.tdf           ; yes             ; Auto-Generated Megafunction            ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/db/altsyncram_h3g1.tdf                                                                                                    ;         ;
+; db/altsyncram_dc91.tdf           ; yes             ; Auto-Generated Megafunction            ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/db/altsyncram_dc91.tdf                                                                                                    ;         ;
+; ramfile.mif                      ; yes             ; Auto-Found Memory Initialization File  ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/ramfile.mif                                                                                                               ;         ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+;                                             ;                ;
+; Total combinational functions               ; 0              ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 0              ;
+;     -- 3 input functions                    ; 0              ;
+;     -- <=2 input functions                  ; 0              ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 0              ;
+;     -- arithmetic mode                      ; 0              ;
+;                                             ;                ;
+; Total registers                             ; 0              ;
+;     -- Dedicated logic registers            ; 0              ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 49             ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+; Maximum fan-out node                        ; ValueSelect[0] ;
+; Maximum fan-out                             ; 1              ;
+; Total fan-out                               ; 49             ;
+; Average fan-out                             ; 0.50           ;
++---------------------------------------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |singleCycleProc           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 49   ; 0            ; |singleCycleProc    ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                 ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------+---------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                             ; IP Include File                                         ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------+---------------------------------------------------------+
+; Altera ; RAM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |singleCycleProc|dataMem:DataMemory         ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/dataMem.vhd  ;
+; Altera ; ROM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |singleCycleProc|instrMem:MemoryInstruction ; H:/hmanh018/Documents/CEG 3156/Lab 2/Lab 2/instrMem.vhd ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------+---------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                     ;
++---------------------------------------------------+--------------------+
+; Register name                                     ; Reason for Removal ;
++---------------------------------------------------+--------------------+
+; register8bit:ProgramCounter|enARdFF_2:DFF_0|int_q ; Lost fanout        ;
+; register8bit:ProgramCounter|enARdFF_2:DFF_1|int_q ; Lost fanout        ;
+; register8bit:ProgramCounter|enARdFF_2:DFF_2|int_q ; Lost fanout        ;
+; register8bit:ProgramCounter|enARdFF_2:DFF_3|int_q ; Lost fanout        ;
+; register8bit:ProgramCounter|enARdFF_2:DFF_4|int_q ; Lost fanout        ;
+; register8bit:ProgramCounter|enARdFF_2:DFF_5|int_q ; Lost fanout        ;
+; register8bit:ProgramCounter|enARdFF_2:DFF_6|int_q ; Lost fanout        ;
+; register8bit:ProgramCounter|enARdFF_2:DFF_7|int_q ; Lost fanout        ;
+; Total Number of Removed Registers = 8             ;                    ;
++---------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Source assignments for dataMem:DataMemory|altsyncram:altsyncram_component|altsyncram_h3g1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                         ;
++---------------------------------+--------------------+------+--------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                          ;
++---------------------------------+--------------------+------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Source assignments for instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                 ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                  ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dataMem:DataMemory|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-------------------------------------+
+; Parameter Name                     ; Value                ; Type                                ;
++------------------------------------+----------------------+-------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                             ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                             ;
+; WIDTH_A                            ; 8                    ; Signed Integer                      ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                      ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                      ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                             ;
+; WIDTH_B                            ; 1                    ; Untyped                             ;
+; WIDTHAD_B                          ; 1                    ; Untyped                             ;
+; NUMWORDS_B                         ; 1                    ; Untyped                             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                             ;
+; BYTE_SIZE                          ; 8                    ; Untyped                             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; DONT_CARE            ; Untyped                             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                             ;
+; INIT_FILE                          ; RAM.mif              ; Untyped                             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                             ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                             ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                             ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                             ;
+; CBXI_PARAMETER                     ; altsyncram_h3g1      ; Untyped                             ;
++------------------------------------+----------------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instrMem:MemoryInstruction|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                        ;
++------------------------------------+----------------------+---------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                     ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                              ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                     ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                     ;
+; WIDTH_A                            ; 32                   ; Signed Integer                              ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                              ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                              ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                     ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                     ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                     ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                     ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                     ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                     ;
+; WIDTH_B                            ; 1                    ; Untyped                                     ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                     ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                     ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                     ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                     ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                     ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                     ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                     ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                     ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                     ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                     ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                     ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                     ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                              ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                     ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                     ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                     ;
+; INIT_FILE                          ; RAMFile.mif          ; Untyped                                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                     ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                     ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                     ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                     ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                     ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                     ;
+; CBXI_PARAMETER                     ; altsyncram_dc91      ; Untyped                                     ;
++------------------------------------+----------------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                       ;
++-------------------------------------------+------------------------------------------------------------+
+; Name                                      ; Value                                                      ;
++-------------------------------------------+------------------------------------------------------------+
+; Number of entity instances                ; 2                                                          ;
+; Entity Instance                           ; dataMem:DataMemory|altsyncram:altsyncram_component         ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                ;
+;     -- WIDTH_A                            ; 8                                                          ;
+;     -- NUMWORDS_A                         ; 256                                                        ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                     ;
+;     -- WIDTH_B                            ; 1                                                          ;
+;     -- NUMWORDS_B                         ; 1                                                          ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                     ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                               ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                       ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                  ;
+; Entity Instance                           ; instrMem:MemoryInstruction|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                        ;
+;     -- WIDTH_A                            ; 32                                                         ;
+;     -- NUMWORDS_A                         ; 256                                                        ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                     ;
+;     -- WIDTH_B                            ; 1                                                          ;
+;     -- NUMWORDS_B                         ; 1                                                          ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                     ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                               ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                       ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                  ;
++-------------------------------------------+------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controlUnit:CPUControlUnit"                                                               ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; o_memtoreg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_regwrite ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_memread  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_branch   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_jump     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux8_2to1:ALUOpMux"                                                                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_8bit ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:RegisterALU|mux8_8to1:ALUMUXSelect" ;
++------------+-------+----------+------------------------------------+
+; Port       ; Type  ; Severity ; Details                            ;
++------------+-------+----------+------------------------------------+
+; i_p3       ; Input ; Info     ; Stuck at GND                       ;
+; i_p4       ; Input ; Info     ; Stuck at GND                       ;
+; i_p5       ; Input ; Info     ; Stuck at GND                       ;
+; i_p7[7..1] ; Input ; Info     ; Stuck at GND                       ;
++------------+-------+----------+------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:RegisterALU|eightBitComparator:SLTResult|oneBitComparator:comp7" ;
++--------------+-------+----------+---------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                       ;
++--------------+-------+----------+---------------------------------------------------------------+
+; i_gtprevious ; Input ; Info     ; Stuck at GND                                                  ;
+; i_ltprevious ; Input ; Info     ; Stuck at GND                                                  ;
++--------------+-------+----------+---------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:RegisterALU|eightBitComparator:SLTResult"                                       ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; o_gt ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_eq ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:RegisterALU"                                                                        ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; opres    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "mux8_2to1:RegDstMux" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; a_8bit[7..5] ; Input ; Info     ; Stuck at GND  ;
+; b_8bit[7..5] ; Input ; Info     ; Stuck at GND  ;
++--------------+-------+----------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "instrMem:MemoryInstruction"                                                              ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; q[25..24] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q[10..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "RegisterFile_8x8:RegFile" ;
++-------------+-------+----------+---------------------+
+; Port        ; Type  ; Severity ; Details             ;
++-------------+-------+----------+---------------------+
+; in_write_en ; Input ; Info     ; Stuck at VCC        ;
++-------------+-------+----------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dataMem:DataMemory"                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "signExtend16to32:signExtend"                                                                     ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; input16bit[15..8] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; output32bit       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_7"                                          ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_6"                                          ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_5"                                          ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_4"                                          ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_3"                                          ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_2"                                          ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_1"                                          ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register8bit:ProgramCounter|enARdFF_2:DFF_0"                                          ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "register8bit:ProgramCounter" ;
++-------+-------+----------+------------------------------+
+; Port  ; Type  ; Severity ; Details                      ;
++-------+-------+----------+------------------------------+
+; in_en ; Input ; Info     ; Stuck at VCC                 ;
++-------+-------+----------+------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -156,15 +679,45 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Feb 26 14:38:42 2025
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Mar 19 12:08:37 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off singleCycleProc -c singleCycleProc
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file subtractor8bit.vhd
+    Info (12022): Found design unit 1: subtractor8bit-rtl
+    Info (12023): Found entity 1: subtractor8bit
+Info (12021): Found 2 design units, including 1 entities, in source file registerfile_8x8.vhd
+    Info (12022): Found design unit 1: RegisterFile_8x8-struct
+    Info (12023): Found entity 1: RegisterFile_8x8
+Info (12021): Found 2 design units, including 1 entities, in source file register8bit.vhd
+    Info (12022): Found design unit 1: register8bit-struct
+    Info (12023): Found entity 1: register8bit
+Info (12021): Found 2 design units, including 1 entities, in source file onebitcomparator.vhd
+    Info (12022): Found design unit 1: oneBitComparator-rtl
+    Info (12023): Found entity 1: oneBitComparator
+Info (12021): Found 2 design units, including 1 entities, in source file instrmem.vhd
+    Info (12022): Found design unit 1: instrmem-SYN
+    Info (12023): Found entity 1: instrMem
+Info (12021): Found 2 design units, including 1 entities, in source file enardff_2.vhd
+    Info (12022): Found design unit 1: enARdFF_2-rtl
+    Info (12023): Found entity 1: enARdFF_2
+Info (12021): Found 2 design units, including 1 entities, in source file datamem.vhd
+    Info (12022): Found design unit 1: datamem-SYN
+    Info (12023): Found entity 1: dataMem
+Info (12021): Found 2 design units, including 1 entities, in source file 8bitadder.vhd
+    Info (12022): Found design unit 1: adder8bit-rtl
+    Info (12023): Found entity 1: adder8bit
+Info (12021): Found 1 design units, including 1 entities, in source file lsh2bitreg_32.vhd
+    Info (12023): Found entity 1: lsh2bitReg_32
+Info (12021): Found 2 design units, including 1 entities, in source file adder32bit.vhd
+    Info (12022): Found design unit 1: adder32bit-rtl
+    Info (12023): Found entity 1: adder32bit
 Info (12021): Found 2 design units, including 1 entities, in source file onebitadder.vhd
     Info (12022): Found design unit 1: oneBitAdder-rtl
     Info (12023): Found entity 1: oneBitAdder
-Error (10500): VHDL syntax error at singleCycleProc.vhd(12) near text ")";  expecting an identifier, or "constant", or "file", or "signal", or "variable" File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/singleCycleProc.vhd Line: 12
-Info (12021): Found 0 design units, including 0 entities, in source file singlecycleproc.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file singlecycleproc.vhd
+    Info (12022): Found design unit 1: singleCycleProc-rtl
+    Info (12023): Found entity 1: singleCycleProc
 Info (12021): Found 2 design units, including 1 entities, in source file signextend16to32.vhd
     Info (12022): Found design unit 1: signExtend16to32-rtl
     Info (12023): Found entity 1: signExtend16to32
@@ -177,34 +730,210 @@ Info (12021): Found 2 design units, including 1 entities, in source file mux8_2t
 Info (12021): Found 2 design units, including 1 entities, in source file mux32_2to1.vhd
     Info (12022): Found design unit 1: mux32_2to1-rtl
     Info (12023): Found entity 1: mux32_2to1
-Info (12021): Found 2 design units, including 1 entities, in source file /users/sherm/onedrive/documents/github/ceg3156-w25/labs/lab 1/adder32bit.vhd
-    Info (12022): Found design unit 1: adder32bit-rtl
-    Info (12023): Found entity 1: adder32bit
-Info (12021): Found 1 design units, including 1 entities, in source file /users/sherm/onedrive/documents/github/ceg3156-w25/labs/lab 1/lsh2bitreg_32.vhd
-    Info (12023): Found entity 1: lsh2bitReg_32
-Error (10522): VHDL Syntax error at ALU.vhd(14): experienced unexpected end-of-file ;  expecting "begin", or a declaration statement File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 1/ALU.vhd Line: 14
-Info (12021): Found 0 design units, including 0 entities, in source file /users/sherm/onedrive/documents/github/ceg3156-w25/labs/lab 1/alu.vhd
-Error (10430): VHDL Primary Unit Declaration error at ALU.vhd(5): primary unit "ALU" already exists in library "work" File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/ALU.vhd Line: 5
-Error (10784): HDL error at ALU.vhd(5): see declaration for object "ALU" File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 1/ALU.vhd Line: 5
-Error (10500): VHDL syntax error at ALU.vhd(23) near text "mux8_8to1";  expecting "component" File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/ALU.vhd Line: 23
-Error (10500): VHDL syntax error at ALU.vhd(29) near text ")"; mismatched closing parenthesis  File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/ALU.vhd Line: 29
-Error (10500): VHDL syntax error at ALU.vhd(30) near text "eightBitComparator";  expecting "component" File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/ALU.vhd Line: 30
-Info (12021): Found 0 design units, including 0 entities, in source file alu.vhd
-Error (10500): VHDL syntax error at eightBitComparator.vhd(11) near text ")"; mismatched closing parenthesis  File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/eightBitComparator.vhd Line: 11
-Error (10500): VHDL syntax error at eightBitComparator.vhd(11) near text ";";  expecting "end", or "begin", or a declaration statement File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/eightBitComparator.vhd Line: 11
-Error (10523): Ignored construct eightBitComparator at eightBitComparator.vhd(7) due to previous errors File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/eightBitComparator.vhd Line: 7
-Error (10396): VHDL syntax error at eightBitComparator.vhd(45): name used in construct must match previously specified name "comparatorGenerate" File: C:/Users/sherm/OneDrive/Documents/GitHub/CEG3156-W25/Labs/Lab 2/eightBitComparator.vhd Line: 45
-Info (12021): Found 0 design units, including 0 entities, in source file eightbitcomparator.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU-rtl
+    Info (12023): Found entity 1: ALU
+Info (12021): Found 2 design units, including 1 entities, in source file eightbitcomparator.vhd
+    Info (12022): Found design unit 1: eightBitComparator-rtl
+    Info (12023): Found entity 1: eightBitComparator
 Info (12021): Found 2 design units, including 1 entities, in source file mux8to1.vhd
-    Info (12022): Found design unit 1: mux8to1-rtl
+    Info (12022): Found design unit 1: mux8to1-struct
     Info (12023): Found entity 1: mux8to1
 Info (12021): Found 2 design units, including 1 entities, in source file mux8_8to1.vhd
-    Info (12022): Found design unit 1: mux8_8to1-rtl
+    Info (12022): Found design unit 1: mux8_8to1-struct
     Info (12023): Found entity 1: mux8_8to1
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 11 errors, 1 warning
-    Error: Peak virtual memory: 4652 megabytes
-    Error: Processing ended: Wed Feb 26 14:38:44 2025
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:01
+Info (12021): Found 2 design units, including 1 entities, in source file controlunit.vhd
+    Info (12022): Found design unit 1: controlUnit-rtl
+    Info (12023): Found entity 1: controlUnit
+Info (12021): Found 2 design units, including 1 entities, in source file alucontrolunit.vhd
+    Info (12022): Found design unit 1: ALUControlUnit-rtl
+    Info (12023): Found entity 1: ALUControlUnit
+Info (12021): Found 2 design units, including 1 entities, in source file romfile.vhd
+    Info (12022): Found design unit 1: romfile-SYN
+    Info (12023): Found entity 1: ROMFile
+Info (12021): Found 2 design units, including 1 entities, in source file ramfile.vhd
+    Info (12022): Found design unit 1: ramfile-SYN
+    Info (12023): Found entity 1: RAMFile
+Info (12021): Found 2 design units, including 1 entities, in source file decoder_3x8.vhd
+    Info (12022): Found design unit 1: Decoder_3x8-struct
+    Info (12023): Found entity 1: Decoder_3x8
+Info (12127): Elaborating entity "singleCycleProc" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at singleCycleProc.vhd(9): used implicit default value for signal "MuxOut" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at singleCycleProc.vhd(10): used implicit default value for signal "InstructionOut" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at singleCycleProc.vhd(11): used implicit default value for signal "BranchOut" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at singleCycleProc.vhd(11): used implicit default value for signal "MemWriteOut" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at singleCycleProc.vhd(11): used implicit default value for signal "RegWriteOut" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at singleCycleProc.vhd(99): used implicit default value for signal "int_pcIncrement" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at singleCycleProc.vhd(100): object "int_instructionAddExt" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at singleCycleProc.vhd(109): object "int_ALUOperandB" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at singleCycleProc.vhd(109): object "int_ALUResult" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at singleCycleProc.vhd(114): object "int_ReadDataMem" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at singleCycleProc.vhd(118): object "int_MemToReg" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at singleCycleProc.vhd(118): object "int_RegWrite" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at singleCycleProc.vhd(118): object "int_MemRead" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at singleCycleProc.vhd(118): object "int_Branch" assigned a value but never read
+Info (12128): Elaborating entity "register8bit" for hierarchy "register8bit:ProgramCounter"
+Info (12128): Elaborating entity "enARdFF_2" for hierarchy "register8bit:ProgramCounter|enARdFF_2:DFF_0"
+Info (12128): Elaborating entity "signExtend16to32" for hierarchy "signExtend16to32:signExtend"
+Info (12128): Elaborating entity "dataMem" for hierarchy "dataMem:DataMemory"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "dataMem:DataMemory|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "dataMem:DataMemory|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "dataMem:DataMemory|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "RAM.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "DONT_CARE"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_h3g1.tdf
+    Info (12023): Found entity 1: altsyncram_h3g1
+Info (12128): Elaborating entity "altsyncram_h3g1" for hierarchy "dataMem:DataMemory|altsyncram:altsyncram_component|altsyncram_h3g1:auto_generated"
+Info (12128): Elaborating entity "RegisterFile_8x8" for hierarchy "RegisterFile_8x8:RegFile"
+Info (12128): Elaborating entity "Decoder_3x8" for hierarchy "RegisterFile_8x8:RegFile|Decoder_3x8:Decoder"
+Info (12128): Elaborating entity "mux8_8to1" for hierarchy "RegisterFile_8x8:RegFile|mux8_8to1:Read_mux1"
+Info (12128): Elaborating entity "mux8to1" for hierarchy "RegisterFile_8x8:RegFile|mux8_8to1:Read_mux1|mux8to1:mux0"
+Info (12128): Elaborating entity "instrMem" for hierarchy "instrMem:MemoryInstruction"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "instrMem:MemoryInstruction|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "instrMem:MemoryInstruction|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "instrMem:MemoryInstruction|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "RAMFile.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "width_a" = "32"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_dc91.tdf
+    Info (12023): Found entity 1: altsyncram_dc91
+Info (12128): Elaborating entity "altsyncram_dc91" for hierarchy "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated"
+Info (12128): Elaborating entity "mux8_2to1" for hierarchy "mux8_2to1:RegDstMux"
+Info (12128): Elaborating entity "mux2to1" for hierarchy "mux8_2to1:RegDstMux|mux2to1:\mux8BitGenerate:0:mux_i"
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:RegisterALU"
+Warning (10541): VHDL Signal Declaration warning at ALU.vhd(10): used implicit default value for signal "Zero" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ALU.vhd(10): used implicit default value for signal "Overflow" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "eightBitComparator" for hierarchy "ALU:RegisterALU|eightBitComparator:SLTResult"
+Info (12128): Elaborating entity "oneBitComparator" for hierarchy "ALU:RegisterALU|eightBitComparator:SLTResult|oneBitComparator:comp7"
+Info (12128): Elaborating entity "controlUnit" for hierarchy "controlUnit:CPUControlUnit"
+Info (12128): Elaborating entity "ALUControlUnit" for hierarchy "ALUControlUnit:RegisterALUControlUnit"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[8]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[9]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[10]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[21]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[22]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[23]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[24]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[25]"
+        Warning (14320): Synthesized away node "dataMem:DataMemory|altsyncram:altsyncram_component|altsyncram_h3g1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "dataMem:DataMemory|altsyncram:altsyncram_component|altsyncram_h3g1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "dataMem:DataMemory|altsyncram:altsyncram_component|altsyncram_h3g1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "dataMem:DataMemory|altsyncram:altsyncram_component|altsyncram_h3g1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "dataMem:DataMemory|altsyncram:altsyncram_component|altsyncram_h3g1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "dataMem:DataMemory|altsyncram:altsyncram_component|altsyncram_h3g1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "dataMem:DataMemory|altsyncram:altsyncram_component|altsyncram_h3g1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "dataMem:DataMemory|altsyncram:altsyncram_component|altsyncram_h3g1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[11]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[12]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[13]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[14]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[15]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[16]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[17]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[18]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[19]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[20]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[26]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[27]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[28]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[29]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[30]"
+        Warning (14320): Synthesized away node "instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_dc91:auto_generated|q_a[31]"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "MuxOut[0]" is stuck at GND
+    Warning (13410): Pin "MuxOut[1]" is stuck at GND
+    Warning (13410): Pin "MuxOut[2]" is stuck at GND
+    Warning (13410): Pin "MuxOut[3]" is stuck at GND
+    Warning (13410): Pin "MuxOut[4]" is stuck at GND
+    Warning (13410): Pin "MuxOut[5]" is stuck at GND
+    Warning (13410): Pin "MuxOut[6]" is stuck at GND
+    Warning (13410): Pin "MuxOut[7]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[0]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[1]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[2]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[3]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[4]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[5]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[6]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[7]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[8]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[9]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[10]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[11]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[12]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[13]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[14]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[15]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[16]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[17]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[18]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[19]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[20]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[21]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[22]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[23]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[24]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[25]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[26]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[27]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[28]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[29]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[30]" is stuck at GND
+    Warning (13410): Pin "InstructionOut[31]" is stuck at GND
+    Warning (13410): Pin "BranchOut" is stuck at GND
+    Warning (13410): Pin "ZeroOut" is stuck at GND
+    Warning (13410): Pin "MemWriteOut" is stuck at GND
+    Warning (13410): Pin "RegWriteOut" is stuck at GND
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ValueSelect[0]"
+    Warning (15610): No output dependent on input pin "ValueSelect[1]"
+    Warning (15610): No output dependent on input pin "ValueSelect[2]"
+    Warning (15610): No output dependent on input pin "GClock"
+    Warning (15610): No output dependent on input pin "GReset"
+Info (21057): Implemented 49 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 44 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 110 warnings
+    Info: Peak virtual memory: 4718 megabytes
+    Info: Processing ended: Wed Mar 19 12:08:50 2025
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:07
 
 

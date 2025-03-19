@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity mux8_2to1 is
 port(
 	A_8bit, B_8bit : in std_logic_vector(7 downto 0);
-	Sel_8bit : in std_logic_vector;
+	Sel_8bit : in std_logic;
 	O_8bit : out std_logic_vector(7 downto 0)
 	);
 end mux8_2to1;

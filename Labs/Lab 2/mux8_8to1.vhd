@@ -1,39 +1,133 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+ENTITY mux8_8to1 IS
+            PORT (
+                        i_SEL : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+                        i_p0 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+                        i_p1 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+                        i_p2 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+                        i_p3 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+                        i_p4 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+                        i_p5 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+                        i_p6 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+                        i_p7 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+                        o_MUX : OUT STD_LOGIC_VECTOR(7 DOWNTO 0));
+END mux8_8to1;
 
-entity mux8_8to1 is
-port(
-	A_8bit, B_8bit, C_8bit, D_8bit, E_8bit, F_8bit, G_8bit, H_8bit : in std_logic_vector(7 downto 0);
-	Sel_8bit : in std_logic_vector(2 downto 0);
-	O_8bit : out std_logic_vector(7 downto 0)
-	);
-end mux8_8to1;
+ARCHITECTURE struct OF mux8_8to1 IS
+            SIGNAL int_mux_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
-architecture rtl of mux8_8to1 is
+            COMPONENT  mux8to1 IS
+                        PORT (
+                                    i_SEL : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+                                    i_input : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+                                    o_output : OUT STD_LOGIC);
+            END COMPONENT;
 
-	component mux8to1 is
-	port(
-		A, B, C, D, E, F, G , H : in std_logic;
-		Sel : in std_logic_vector(2 downto 0);
-		O : out std_logic
-	);
-	end component;
-	
-	begin
-		mux8BitGenerate: for i in 0 to 7 generate
-			mux_i: mux8to1
-			port map(
-				A => A_8bit(i),
-				B => B_8bit(i),
-				C => C_8bit(i),
-				D => D_8bit(i),
-				E => E_8bit(i),
-				F => F_8bit(i),
-				G => G_8bit(i),
-				H => H_8bit(i),
-				Sel => Sel_8bit,
-				O => O_8bit(i)
-			);
-		end generate mux8BitGenerate;
-end rtl;
+BEGIN
+            mux0 :  mux8to1
+            PORT MAP(
+                        i_SEL => i_SEL,
+                        i_input(0) => i_p0(0),
+                        i_input(1) => i_p1(0),
+                        i_input(2) => i_p2(0),
+                        i_input(3) => i_p3(0),
+                        i_input(4) => i_p4(0),
+                        i_input(5) => i_p5(0),
+                        i_input(6) => i_p6(0),
+                        i_input(7) => i_p7(0),
+                        o_output => int_mux_OUT(0));
+
+            mux1 :  mux8to1
+            PORT MAP(
+                        i_SEL => i_SEL,
+                        i_input(0) => i_p0(1),
+                        i_input(1) => i_p1(1),
+                        i_input(2) => i_p2(1),
+                        i_input(3) => i_p3(1),
+                        i_input(4) => i_p4(1),
+                        i_input(5) => i_p5(1),
+                        i_input(6) => i_p6(1),
+                        i_input(7) => i_p7(1),
+                        o_output => int_mux_OUT(1));
+
+            mux2 :  mux8to1
+            PORT MAP(
+                        i_SEL => i_SEL,
+                        i_input(0) => i_p0(2),
+                        i_input(1) => i_p1(2),
+                        i_input(2) => i_p2(2),
+                        i_input(3) => i_p3(2),
+                        i_input(4) => i_p4(2),
+                        i_input(5) => i_p5(2),
+                        i_input(6) => i_p6(2),
+                        i_input(7) => i_p7(2),
+                        o_output => int_mux_OUT(2));
+
+            mux3 :  mux8to1
+            PORT MAP(
+                        i_SEL => i_SEL,
+                        i_input(0) => i_p0(3),
+                        i_input(1) => i_p1(3),
+                        i_input(2) => i_p2(3),
+                        i_input(3) => i_p3(3),
+                        i_input(4) => i_p4(3),
+                        i_input(5) => i_p5(3),
+                        i_input(6) => i_p6(3),
+                        i_input(7) => i_p7(3),
+                        o_output => int_mux_OUT(3));
+
+            mux4 :  mux8to1
+            PORT MAP(
+                        i_SEL => i_SEL,
+                        i_input(0) => i_p0(4),
+                        i_input(1) => i_p1(4),
+                        i_input(2) => i_p2(4),
+                        i_input(3) => i_p3(4),
+                        i_input(4) => i_p4(4),
+                        i_input(5) => i_p5(4),
+                        i_input(6) => i_p6(4),
+                        i_input(7) => i_p7(4),
+                        o_output => int_mux_OUT(4));
+
+            mux5 :  mux8to1
+            PORT MAP(
+                        i_SEL => i_SEL,
+                        i_input(0) => i_p0(5),
+                        i_input(1) => i_p1(5),
+                        i_input(2) => i_p2(5),
+                        i_input(3) => i_p3(5),
+                        i_input(4) => i_p4(5),
+                        i_input(5) => i_p5(5),
+                        i_input(6) => i_p6(5),
+                        i_input(7) => i_p7(5),
+                        o_output => int_mux_OUT(5));
+
+            mux6 :  mux8to1
+            PORT MAP(
+                        i_SEL => i_SEL,
+                        i_input(0) => i_p0(6),
+                        i_input(1) => i_p1(6),
+                        i_input(2) => i_p2(6),
+                        i_input(3) => i_p3(6),
+                        i_input(4) => i_p4(6),
+                        i_input(5) => i_p5(6),
+                        i_input(6) => i_p6(6),
+                        i_input(7) => i_p7(6),
+                        o_output => int_mux_OUT(6));
+
+            mux7 :  mux8to1
+            PORT MAP(
+                        i_SEL => i_SEL,
+                        i_input(0) => i_p0(7),
+                        i_input(1) => i_p1(7),
+                        i_input(2) => i_p2(7),
+                        i_input(3) => i_p3(7),
+                        i_input(4) => i_p4(7),
+                        i_input(5) => i_p5(7),
+                        i_input(6) => i_p6(7),
+                        i_input(7) => i_p7(7),
+                        o_output => int_mux_OUT(7));
+
+            o_MUX <= int_mux_OUT;
+END struct;

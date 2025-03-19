@@ -16,9 +16,9 @@ architecture rtl of ALU is
 	
 	component mux8_8to1 is -- MUX for control input
 	port(
-		A_8bit, B_8bit, C_8bit, D_8bit, E_8bit, F_8bit, G_8bit, H_8bit : in std_logic_vector(7 downto 0);
-		Sel_8bit : in std_logic_vector(2 downto 0);
-		O_8bit : out std_logic_vector(7 downto 0)
+		i_p0, i_p1, i_p2, i_p3, i_p4, i_p5, i_p6, i_p7 : in std_logic_vector(7 downto 0);
+		i_SEL : in std_logic_vector(2 downto 0);
+		o_MUX : out std_logic_vector(7 downto 0)
 		);
 	end component;
 	
@@ -41,14 +41,16 @@ begin
 	
 	ALUMUXSelect : mux8_8to1
 	port map(
-		A_8bit => (Operand1 and operand2),
-		B_8bit => (Operand1 or Operand2),
-		C_8bit => std_logic_vector(signed(Operand1) + signed(Operand2)),
-		D_8bit => "00000000",
-		E_8bit => "00000000",
-		F_8bit => "00000000",
-		G_8bit => std_logic_vector(signed(Operand1) - signed(Operand2)),
-		H_8bit => "0000000" & int_SLTRes
+		i_p0 => (Operand1 and operand2),
+		i_p1 => (Operand1 or Operand2),
+		i_p2 => std_logic_vector(signed(Operand1) + signed(Operand2)),
+		i_p3 => "00000000",
+		i_p4 => "00000000",
+		i_p5 => "00000000",
+		i_p6 => std_logic_vector(signed(Operand1) - signed(Operand2)),
+		i_p7 => "0000000" & int_SLTRes,
+		o_MUX => OpRes,
+		i_SEL => OpSel
 	);
 end rtl;
 	

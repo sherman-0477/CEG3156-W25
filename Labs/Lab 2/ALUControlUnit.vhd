@@ -26,7 +26,7 @@ architecture rtl of ALUControlUnit is
 	Operation1 <= (not ALUOp1) or (not F2);
 	Operation0 <= ALUOp1 and (F3 or F0);
 	
-	o_Operation <= Operation2 and Operation1 and Operation0;
+	o_Operation <= Operation2 & Operation1 & Operation0;
 
 end rtl;
 	
