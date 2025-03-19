@@ -1,7 +1,5 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="singleCycleProc">
-		<CBX_INST_ENTRY INSTANCE_NAME="|singleCycleProc|dataMem:DataMemory|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_h3g1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_dc91.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
