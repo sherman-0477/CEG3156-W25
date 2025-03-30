@@ -1,0 +1,98 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY ID_EX_PipeLineRegister IS
+    PORT (
+        clk        : IN  STD_LOGIC;
+        resetBar   : IN  STD_LOGIC;
+        enable     : IN  STD_LOGIC;
+
+        -- Data Inputs
+        readData1_in   : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        readData2_in   : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        immediate_in   : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        rt_in          : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+        rd_in          : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+
+        -- Control Inputs
+        ALUOp_in       : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+        RegDst_in      : IN STD_LOGIC;
+        ALUSrc_in      : IN STD_LOGIC;
+        MemToReg_in    : IN STD_LOGIC;
+        RegWrite_in    : IN STD_LOGIC;
+        MemRead_in     : IN STD_LOGIC;
+        MemWrite_in    : IN STD_LOGIC;
+
+        -- Data Outputs
+        readData1_out  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        readData2_out  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        immediate_out  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        rt_out         : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+        rd_out         : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+
+        -- Control Outputs
+        ALUOp_out      : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+        RegDst_out     : OUT STD_LOGIC;
+        ALUSrc_out     : OUT STD_LOGIC;
+        MemToReg_out   : OUT STD_LOGIC;
+        RegWrite_out   : OUT STD_LOGIC;
+        MemRead_out    : OUT STD_LOGIC;
+        MemWrite_out   : OUT STD_LOGIC
+    );
+END ID_EX_PipeLineRegister;
+
+ARCHITECTURE structural OF ID_EX_PipeLineRegister IS
+
+    COMPONENT eightbitregister
+        PORT (
+            i_resetBar, i_en : IN STD_LOGIC;
+            i_clock          : IN STD_LOGIC;
+            i_Value          : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+            o_Value          : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+        );
+    END COMPONENT;
+
+    COMPONENT fivebitregister
+        PORT (
+            i_resetBar, i_en : IN STD_LOGIC;
+            i_clock          : IN STD_LOGIC;
+            i_Value          : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+            o_Value          : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
+        );
+    END COMPONENT;
+
+    COMPONENT enARdFF_2
+        PORT (
+            i_resetBar : IN STD_LOGIC;
+            i_d        : IN STD_LOGIC;
+            i_enable   : IN STD_LOGIC;
+            i_clock    : IN STD_LOGIC;
+            o_q        : OUT STD_LOGIC;
+            o_qB       : OUT STD_LOGIC
+        );
+    END COMPONENT;
+
+    -- Internal signals for unused outputs (o_qB)
+    SIGNAL dummy : STD_LOGIC;
+
+BEGIN
+
+    -- Data Registers
+    reg_readData1: eightbitregister PORT MAP (resetBar, enable, clk, readData1_in, readData1_out);
+    reg_readData2: eightbitregister PORT MAP (resetBar, enable, clk, readData2_in, readData2_out);
+    reg_immediate: eightbitregister PORT MAP (resetBar, enable, clk, immediate_in, immediate_out);
+
+    reg_rt: fivebitregister PORT MAP (resetBar, enable, clk, rt_in, rt_out);
+    reg_rd: fivebitregister PORT MAP (resetBar, enable, clk, rd_in, rd_out);
+
+    -- Control Signals (some use 2-bit ALUOp)
+    reg_aluop: eightbitregister PORT MAP (resetBar, enable, clk, "000000" & ALUOp_in, ALUOp_out(1 DOWNTO 0)); -- Slice needed
+
+    reg_regdst: enARdFF_2 PORT MAP (resetBar, RegDst_in, enable, clk, RegDst_out, dummy);
+    reg_alusrc: enARdFF_2 PORT MAP (resetBar, ALUSrc_in, enable, clk, ALUSrc_out, dummy);
+    reg_memtoreg: enARdFF_2 PORT MAP (resetBar, MemToReg_in, enable, clk, MemToReg_out, dummy);
+    reg_regwrite: enARdFF_2 PORT MAP (resetBar, RegWrite_in, enable, clk, RegWrite_out, dummy);
+    reg_memread: enARdFF_2 PORT MAP (resetBar, MemRead_in, enable, clk, MemRead_out, dummy);
+    reg_memwrite: enARdFF_2 PORT MAP (resetBar, MemWrite_in, enable, clk, MemWrite_out, dummy);
+
+END structural;
