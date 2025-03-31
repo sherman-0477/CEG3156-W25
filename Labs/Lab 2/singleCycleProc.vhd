@@ -92,6 +92,115 @@ architecture rtl of singleCycleProc is
 	);
 	end component;
 	
+	component MEM_WB_PipeLineRegister is
+	port(
+		  clk            : IN  STD_LOGIC;
+        resetBar       : IN  STD_LOGIC;
+        enable         : IN  STD_LOGIC;
+
+        -- Data inputs
+        mem_data_in    : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        alu_result_in  : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        dest_reg_in    : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+
+        -- Control inputs
+        RegWrite_in    : IN STD_LOGIC;
+        MemToReg_in    : IN STD_LOGIC;
+
+        -- Data outputs
+        mem_data_out   : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        alu_result_out : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        dest_reg_out   : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+
+        -- Control outputs
+        RegWrite_out   : OUT STD_LOGIC;
+        MemToReg_out   : OUT STD_LOGIC
+	
+	);
+	end component;
+	
+	component IF_ID_PipeLineRegister IS
+    PORT (
+        clk        : IN  STD_LOGIC;
+        resetBar   : IN  STD_LOGIC;
+        enable     : IN  STD_LOGIC;
+        instr_in   : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
+        pc_in      : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+        instr_out  : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+        pc_out     : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+    );
+	END component;
+	
+	component ID_EX_PipeLineRegister IS
+    PORT (
+        clk        : IN  STD_LOGIC;
+        resetBar   : IN  STD_LOGIC;
+        enable     : IN  STD_LOGIC;
+
+        -- Data Inputs
+        readData1_in   : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        readData2_in   : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        immediate_in   : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        rt_in          : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+        rd_in          : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+
+        -- Control Inputs
+        ALUOp_in       : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+        RegDst_in      : IN STD_LOGIC;
+        ALUSrc_in      : IN STD_LOGIC;
+        MemToReg_in    : IN STD_LOGIC;
+        RegWrite_in    : IN STD_LOGIC;
+        MemRead_in     : IN STD_LOGIC;
+        MemWrite_in    : IN STD_LOGIC;
+
+        -- Data Outputs
+        readData1_out  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        readData2_out  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        immediate_out  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        rt_out         : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+        rd_out         : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+
+        -- Control Outputs
+        ALUOp_out      : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+        RegDst_out     : OUT STD_LOGIC;
+        ALUSrc_out     : OUT STD_LOGIC;
+        MemToReg_out   : OUT STD_LOGIC;
+        RegWrite_out   : OUT STD_LOGIC;
+        MemRead_out    : OUT STD_LOGIC;
+        MemWrite_out   : OUT STD_LOGIC
+    );
+	END component;
+	
+	component EX_MEM_PipeLineRegister IS
+    PORT (
+        clk          : IN  STD_LOGIC;
+        resetBar     : IN  STD_LOGIC;
+        enable       : IN  STD_LOGIC;
+
+        -- Data inputs
+        alu_result_in    : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        write_data_in    : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        dest_reg_in      : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+
+        -- Control inputs
+        MemRead_in       : IN STD_LOGIC;
+        MemWrite_in      : IN STD_LOGIC;
+        RegWrite_in      : IN STD_LOGIC;
+        MemToReg_in      : IN STD_LOGIC;
+
+        -- Data outputs
+        alu_result_out   : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        write_data_out   : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        dest_reg_out     : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+
+        -- Control outputs
+        MemRead_out      : OUT STD_LOGIC;
+        MemWrite_out     : OUT STD_LOGIC;
+        RegWrite_out     : OUT STD_LOGIC;
+        MemToReg_out     : OUT STD_LOGIC
+    );
+	END component;
+	
 	-- Reset signal
 	signal int_reset : std_logic;
 	
