@@ -60,6 +60,15 @@ ARCHITECTURE structural OF ID_EX_PipeLineRegister IS
             o_Value          : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
         );
     END COMPONENT;
+	 
+	 COMPONENT twobitregister
+		 PORT (
+			  i_resetBar, i_en : IN STD_LOGIC;
+			  i_clock          : IN STD_LOGIC;
+			  i_Value          : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+			  o_Value          : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
+		 );
+	 END COMPONENT;
 
     COMPONENT enARdFF_2
         PORT (
@@ -68,7 +77,7 @@ ARCHITECTURE structural OF ID_EX_PipeLineRegister IS
             i_enable   : IN STD_LOGIC;
             i_clock    : IN STD_LOGIC;
             o_q        : OUT STD_LOGIC;
-            o_qB       : OUT STD_LOGIC
+            o_qBar       : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -86,7 +95,7 @@ BEGIN
     reg_rd: fivebitregister PORT MAP (resetBar, enable, clk, rd_in, rd_out);
 
     -- Control Signals (some use 2-bit ALUOp)
-    reg_aluop: eightbitregister PORT MAP (resetBar, enable, clk, "000000" & ALUOp_in, ALUOp_out(1 DOWNTO 0)); -- Slice needed
+    reg_aluop: twobitregister PORT MAP (resetBar, enable, clk, ALUOp_in, ALUOp_out); -- Slice needed
 
     reg_regdst: enARdFF_2 PORT MAP (resetBar, RegDst_in, enable, clk, RegDst_out, dummy);
     reg_alusrc: enARdFF_2 PORT MAP (resetBar, ALUSrc_in, enable, clk, ALUSrc_out, dummy);

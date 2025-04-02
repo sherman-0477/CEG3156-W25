@@ -1,0 +1,51 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY twobitregister IS
+    PORT (
+        i_resetBar : IN  STD_LOGIC;
+        i_en       : IN  STD_LOGIC;
+        i_clock    : IN  STD_LOGIC;
+        i_Value    : IN  STD_LOGIC_VECTOR(1 DOWNTO 0);
+        o_Value    : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
+    );
+END twobitregister;
+
+ARCHITECTURE structural OF twobitregister IS
+
+    COMPONENT enARdFF_2
+        PORT (
+            i_resetBar : IN STD_LOGIC;
+            i_d        : IN STD_LOGIC;
+            i_enable   : IN STD_LOGIC;
+            i_clock    : IN STD_LOGIC;
+            o_q        : OUT STD_LOGIC;
+            o_qB       : OUT STD_LOGIC
+        );
+    END COMPONENT;
+
+    SIGNAL dummy0, dummy1 : STD_LOGIC;
+
+BEGIN
+
+    -- Bit 0
+    lsb: enARdFF_2 PORT MAP (
+        i_resetBar => i_resetBar,
+        i_d        => i_Value(0),
+        i_enable   => i_en,
+        i_clock    => i_clock,
+        o_q        => o_Value(0),
+        o_qB       => dummy0
+    );
+
+    -- Bit 1
+    msb: enARdFF_2 PORT MAP (
+        i_resetBar => i_resetBar,
+        i_d        => i_Value(1),
+        i_enable   => i_en,
+        i_clock    => i_clock,
+        o_q        => o_Value(1),
+        o_qB       => dummy1
+    );
+
+END structural;

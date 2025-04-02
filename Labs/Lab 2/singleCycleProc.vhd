@@ -5,6 +5,7 @@ use ieee.numeric_std.all;
 entity singleCycleProc is
 	port(
 		ValueSelect : in std_logic_vector(2 downto 0);
+		InstructionSelect : in std_logic_vector(2 downto 0);
 		GClock, GReset : in std_logic;
 		MuxOut : out std_logic_vector(7 downto 0);
 		InstructionOut : out std_logic_vector(31 downto 0);
@@ -70,6 +71,15 @@ architecture rtl of singleCycleProc is
 		data : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 		wren : IN STD_LOGIC;
 		q : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+	);
+	end component;
+	
+	component adder8bit is
+	port(
+		i_Ai, i_Bi : in std_logic_vector(7 downto 0);
+		i_CarryIn : in std_logic;
+		o_CarryOut : out std_logic;
+		o_Sum : out std_logic_vector(7 downto 0)
 	);
 	end component;
 	
@@ -168,7 +178,8 @@ architecture rtl of singleCycleProc is
         RegWrite_out   : OUT STD_LOGIC;
         MemRead_out    : OUT STD_LOGIC;
         MemWrite_out   : OUT STD_LOGIC
-    );
+		  );
+		  
 	END component;
 	
 	component EX_MEM_PipeLineRegister IS
@@ -201,6 +212,14 @@ architecture rtl of singleCycleProc is
     );
 	END component;
 	
+	component thirtytwobitregister IS
+		PORT (
+			i_resetBar, i_en : IN STD_LOGIC;
+			i_clock : IN STD_LOGIC;
+			i_Value : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+			o_Value : OUT STD_LOGIC_VECTOR(31 DOWNTO 0));
+	END component;
+		
 	-- Reset signal
 	signal int_reset : std_logic;
 	
@@ -230,8 +249,38 @@ architecture rtl of singleCycleProc is
 	signal int_SEinput : std_logic_vector(15 downto 0);
 	signal int_SEoutput : std_logic_vector(31 downto 0);
 	
+	-- 32bit register signals
+	signal int_resetBar, int_enable, int_clock : STD_LOGIC;
+	signal int_i_value, int_o_value : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	
+	-- IF ID Pipeline register signals
+	signal int_instr_in, int_instr_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal int_pc_in, int_pc_out : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	
+	-- ID EX Pipeline resgister signals
+	signal int_immediate_in, int_readData1_out, int_readData2_out, int_immediate_out : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal int_rt_in, int_rd_in, int_rt_out, int_rd_out : STD_LOGIC_VECTOR(4 DOWNTO 0);
+	signal int_ALUOPControl_out : std_logic_vector(1 downto 0);
+	signal int_RegDst_out, int_ALUSrc_out, int_MemToReg_out, int_RegWrite_out, int_MemRead_out, int_MemWrite_out, int_Branch_out : std_logic;
+	
+	-- EX MEM Pipeline register signals
+	signal int_alu_result_in, int_write_data_in, int_alu_result_out, int_write_data_out : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	signal int_dest_reg_in, int_dest_reg_out : STD_LOGIC_VECTOR(4 DOWNTO 0);
+	
+	-- MEM WB Pipeline register signals
+	signal int_mem_data_in, int_mem_data_out : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	
 	
 	begin
+	
+	ProgramCounterAdder : adder8bit
+	port map(
+	 i_Ai => int_instructionAdd,
+    i_Bi => "00000100",
+    i_CarryIn => '0',
+    o_CarryOut => open,
+    o_Sum => int_pcIncrement
+	);
 	
 	ProgramCounter : register8bit
 	port map(
@@ -325,5 +374,122 @@ architecture rtl of singleCycleProc is
 		i_ALUOp => int_ALUOPControl,
 		o_Operation => int_ALUOperation
 	);
+	
+	bigRegsiter : thirtytwobitregister
+	port map(
+		i_resetBar => int_resetBar, 
+		i_en => int_enable, 
+		i_clock => int_clock, 
+		i_Value => int_i_value, 
+		o_Value => int_o_value
+	);
+	
+	IF_ID_PipeLineReg : IF_ID_PipeLineRegister
+	port map(
+		clk        => int_clock, 
+		resetBar   => int_resetBar, 
+		enable     => int_enable, 
+		instr_in   => int_instr_in, 
+		pc_in      => int_pc_in, 
+		instr_out  => int_instr_out, 
+		pc_out     => int_pc_out
+	);
+	
+	ID_EX_PipeLineReg : ID_EX_PipeLineRegister
+	port map(
+	  clk => int_clock,
+	  resetBar => int_resetBar,
+	  enable => int_enable,
+
+	  -- Data Inputs
+	  readData1_in => int_ReadData1,
+	  readData2_in => int_ReadData2,
+	  immediate_in => int_immediate_in,
+	  rt_in        => int_rt_in,
+	  rd_in        => int_rt_out,
+
+	  -- Control Inputs
+	  ALUOp_in     => int_ALUOPControl,
+	  RegDst_in    => int_RegDst,
+	  ALUSrc_in    => int_ALUSrc,
+	  MemToReg_in  => int_MemToReg,
+	  RegWrite_in  => int_RegWrite,
+	  MemRead_in   => int_MemRead,
+	  MemWrite_in  => int_MemWrite,
+
+	  -- Data Outputs
+	  readData1_out  => int_readData1_out,
+	  readData2_out  => int_readData2,
+	  immediate_out  => int_immediate_out,
+	  rt_out         => int_rt_out,
+	  rd_out         => int_rd_out,
+
+	  -- Control Outputs
+	  ALUOp_out      => int_ALUOPControl_out,
+	  RegDst_out     => int_regDst_out,
+	  ALUSrc_out     => int_ALUSrc_out,
+	  MemToReg_out   => int_memToReg_out,
+	  RegWrite_out   => int_regWrite_out,
+	  MemRead_out    => int_memRead_out,
+	  MemWrite_out   => int_memWrite_out
+	);
+	
+	EX_MEM_PipeLineReg : EX_MEM_PipeLineRegister
+	port map(
+	  clk => int_clock,
+	  resetBar => int_resetBar,
+	  enable => int_enable,
+
+	  -- Data inputs
+	  alu_result_in   => int_alu_result_in,
+	  write_data_in   => int_write_data_in,
+	  dest_reg_in     => int_dest_reg_in,
+
+	  -- Control inputs
+	  MemRead_in       => int_MemRead,
+	  MemWrite_in      => int_MemWrite,
+	  RegWrite_in      => int_RegWrite,
+	  MemToReg_in      => int_MemToReg,
+
+	  -- Data outputs
+	  alu_result_out   => int_alu_result_out,
+	  write_data_out   => int_write_data_out,
+	  dest_reg_out     => int_dest_reg_out,
+
+	  -- Control outputs
+	  MemRead_out       => int_MemRead_out,
+	  MemWrite_out      => int_MemWrite_out,
+	  RegWrite_out     => int_RegWrite_out,
+	  MemToReg_out     => int_MemToReg_out
+	);
+	
+	MEM_WB_PipeLineReg : MEM_WB_PipeLineRegister
+	port map(
+	  clk => int_clock,
+	  resetBar => int_resetBar,
+	  enable => int_enable,
+
+	  -- Data inputs
+	  mem_data_in    => int_mem_data_in,
+	  alu_result_in  => int_alu_result_in,
+	  dest_reg_in    => int_dest_reg_in,
+
+	  -- Control inputs
+	  RegWrite_in    => int_regWrite,
+	  MemToReg_in    => int_memToReg,
+	  -- Data outputs
+	  mem_data_out   => int_mem_data_out,
+	  alu_result_out => int_alu_result_out,
+	  dest_reg_out   => int_dest_reg_out,
+
+	  -- Control outputs
+	  RegWrite_out   => int_regwrite_out,
+	  MemToReg_out   => int_memToReg_out
+	);
+	
+	BranchOut <= int_Branch;
+	MemWriteOut <= int_memWrite;
+	RegWriteOut <= int_regWrite;
+	InstructionOut <= int_instr_out;
 	
 end rtl;

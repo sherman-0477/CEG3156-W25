@@ -58,7 +58,7 @@ ARCHITECTURE structural OF EX_MEM_PipeLineRegister IS
             i_enable   : IN STD_LOGIC;
             i_clock    : IN STD_LOGIC;
             o_q        : OUT STD_LOGIC;
-            o_qB       : OUT STD_LOGIC
+            o_qBar       : OUT STD_LOGIC
         );
     END COMPONENT;
 

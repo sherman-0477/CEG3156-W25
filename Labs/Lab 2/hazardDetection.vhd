@@ -12,5 +12,6 @@ end entity;
 
 architecture rtl of hazardDetection is
 begin
-	Hazard_isDetected <= (ID_EX_MemRead and (ID_EX_RegisterRt = IF_ID_RegisterRs)) or (ID_EX_RegisterRt = IF_ID_RegisterRt);
+	Hazard_isDetected <= '1' when (ID_EX_MemRead = '1' and (ID_EX_RegisterRt = IF_ID_RegisterRs)) or (ID_EX_RegisterRt = IF_ID_RegisterRt)
+								else '0';
 end architecture;

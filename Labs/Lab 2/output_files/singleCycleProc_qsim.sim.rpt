@@ -1,0 +1,399 @@
+Simulator report for singleCycleProc_qsim
+Wed Apr 02 14:30:35 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ALTSYNCRAM
+  6. Coverage Summary
+  7. Complete 1/0-Value Coverage
+  8. Missing 1-Value Coverage
+  9. Missing 0-Value Coverage
+ 10. Simulator INI Usage
+ 11. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 125 nodes    ;
+; Simulation Coverage         ;       8.40 % ;
+; Total Number of Transitions ; 71           ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone III  ;
++-----------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                               ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                             ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                          ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                                 ;               ;
+; Vector input source                                                                        ; H:/hmanh018/Documents/CEG 3156/CEG3156-W25/Labs/Lab 2/Waveform1.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                  ; On            ;
+; Check outputs                                                                              ; Off                                                                 ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                  ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                  ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                  ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                  ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                 ; Off           ;
+; Detect glitches                                                                            ; Off                                                                 ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                 ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                 ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                 ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                 ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                  ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                          ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                 ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                 ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                                                           ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                                                           ; Transport     ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ALTSYNCRAM ;
++-----------------------------------------------------------------------------------------------------------------------+
+Please refer to fitter text-based report (*.fit.rpt) to view logical memory report content in ASCII.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;       8.40 % ;
+; Total nodes checked                                 ; 125          ;
+; Total output ports checked                          ; 119          ;
+; Total output ports with complete 1/0-value coverage ; 10           ;
+; Total output ports with no 1/0-value coverage       ; 109          ;
+; Total output ports with no 1-value coverage         ; 109          ;
+; Total output ports with no 0-value coverage         ; 109          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                                                                                ;
++------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                  ; Output Port Name                                                                                           ; Output Port Type ;
++------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+------------------+
+; |singleCycleProc|GClock                                                                                    ; |singleCycleProc|GClock                                                                                    ; out              ;
+; |singleCycleProc|GReset                                                                                    ; |singleCycleProc|GReset                                                                                    ; out              ;
+; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_4|int_q                                         ; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_4|int_q                                         ; regout           ;
+; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_3|int_q                                         ; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_3|int_q                                         ; regout           ;
+; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_2|int_q                                         ; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_2|int_q                                         ; regout           ;
+; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:5:adder_i|int_CarryOut1 ; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:5:adder_i|int_CarryOut1 ; out0             ;
+; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:4:adder_i|int_CarryOut3 ; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:4:adder_i|int_CarryOut3 ; out0             ;
+; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:4:adder_i|int_CarryOut1 ; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:4:adder_i|int_CarryOut1 ; out0             ;
+; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:3:adder_i|int_CarryOut3 ; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:3:adder_i|int_CarryOut3 ; out0             ;
+; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:3:adder_i|int_CarryOut1 ; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:3:adder_i|int_CarryOut1 ; out0             ;
++------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                                                                                                         ;
++--------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                                ; Output Port Name                                                                                                   ; Output Port Type ;
++--------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+------------------+
+; |singleCycleProc|MuxOut[0]                                                                                               ; |singleCycleProc|MuxOut[0]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[1]                                                                                               ; |singleCycleProc|MuxOut[1]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[2]                                                                                               ; |singleCycleProc|MuxOut[2]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[3]                                                                                               ; |singleCycleProc|MuxOut[3]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[4]                                                                                               ; |singleCycleProc|MuxOut[4]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[5]                                                                                               ; |singleCycleProc|MuxOut[5]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[6]                                                                                               ; |singleCycleProc|MuxOut[6]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[7]                                                                                               ; |singleCycleProc|MuxOut[7]                                                                                         ; pin_out          ;
+; |singleCycleProc|InstructionOut[0]                                                                                       ; |singleCycleProc|InstructionOut[0]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[1]                                                                                       ; |singleCycleProc|InstructionOut[1]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[2]                                                                                       ; |singleCycleProc|InstructionOut[2]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[3]                                                                                       ; |singleCycleProc|InstructionOut[3]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[4]                                                                                       ; |singleCycleProc|InstructionOut[4]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[5]                                                                                       ; |singleCycleProc|InstructionOut[5]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[6]                                                                                       ; |singleCycleProc|InstructionOut[6]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[7]                                                                                       ; |singleCycleProc|InstructionOut[7]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[8]                                                                                       ; |singleCycleProc|InstructionOut[8]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[9]                                                                                       ; |singleCycleProc|InstructionOut[9]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[10]                                                                                      ; |singleCycleProc|InstructionOut[10]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[11]                                                                                      ; |singleCycleProc|InstructionOut[11]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[12]                                                                                      ; |singleCycleProc|InstructionOut[12]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[13]                                                                                      ; |singleCycleProc|InstructionOut[13]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[14]                                                                                      ; |singleCycleProc|InstructionOut[14]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[15]                                                                                      ; |singleCycleProc|InstructionOut[15]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[16]                                                                                      ; |singleCycleProc|InstructionOut[16]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[17]                                                                                      ; |singleCycleProc|InstructionOut[17]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[18]                                                                                      ; |singleCycleProc|InstructionOut[18]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[19]                                                                                      ; |singleCycleProc|InstructionOut[19]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[20]                                                                                      ; |singleCycleProc|InstructionOut[20]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[21]                                                                                      ; |singleCycleProc|InstructionOut[21]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[22]                                                                                      ; |singleCycleProc|InstructionOut[22]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[23]                                                                                      ; |singleCycleProc|InstructionOut[23]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[24]                                                                                      ; |singleCycleProc|InstructionOut[24]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[25]                                                                                      ; |singleCycleProc|InstructionOut[25]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[26]                                                                                      ; |singleCycleProc|InstructionOut[26]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[27]                                                                                      ; |singleCycleProc|InstructionOut[27]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[28]                                                                                      ; |singleCycleProc|InstructionOut[28]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[29]                                                                                      ; |singleCycleProc|InstructionOut[29]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[30]                                                                                      ; |singleCycleProc|InstructionOut[30]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[31]                                                                                      ; |singleCycleProc|InstructionOut[31]                                                                                ; pin_out          ;
+; |singleCycleProc|BranchOut                                                                                               ; |singleCycleProc|BranchOut                                                                                         ; pin_out          ;
+; |singleCycleProc|ZeroOut                                                                                                 ; |singleCycleProc|ZeroOut                                                                                           ; pin_out          ;
+; |singleCycleProc|MemWriteOut                                                                                             ; |singleCycleProc|MemWriteOut                                                                                       ; pin_out          ;
+; |singleCycleProc|RegWriteOut                                                                                             ; |singleCycleProc|RegWriteOut                                                                                       ; pin_out          ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b31|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b31|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b30|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b30|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b29|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b29|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b28|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b28|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b27|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b27|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b26|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b26|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b25|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b25|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b24|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b24|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b23|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b23|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b22|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b22|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b21|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b21|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b20|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b20|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b19|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b19|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b18|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b18|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b17|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b17|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b16|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b16|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b15|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b15|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b14|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b14|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b13|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b13|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b12|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b12|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b11|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b11|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b10|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b10|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b9|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b9|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b8|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b8|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b7|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b7|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b6|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b6|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b5|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b5|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b4|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b4|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b3|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b3|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b2|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b2|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b1|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b1|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b0|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b0|int_q   ; regout           ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~0                                                                  ; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~0                                                            ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~1                                                                  ; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~1                                                            ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~2                                                                  ; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~2                                                            ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~3                                                                  ; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~3                                                            ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|o_ALUOp1                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|o_ALUOp1                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~0                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~0                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~1                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~1                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~2                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~2                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~3                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~3                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|o_MemRead                                                                    ; |singleCycleProc|controlUnit:CPUControlUnit|o_MemRead                                                              ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_sw~0                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_sw~0                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_sw~1                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_sw~1                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_sw~2                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_sw~2                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|o_MemWrite                                                                   ; |singleCycleProc|controlUnit:CPUControlUnit|o_MemWrite                                                             ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_beq~0                                                                    ; |singleCycleProc|controlUnit:CPUControlUnit|int_beq~0                                                              ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_beq~1                                                                    ; |singleCycleProc|controlUnit:CPUControlUnit|int_beq~1                                                              ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|o_ALUOp0                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|o_ALUOp0                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|o_RegWrite                                                                   ; |singleCycleProc|controlUnit:CPUControlUnit|o_RegWrite                                                             ; out0             ;
+; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ram_block1a26 ; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|q_a[26] ; portadataout0    ;
+; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ram_block1a27 ; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|q_a[27] ; portadataout0    ;
+; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ram_block1a28 ; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|q_a[28] ; portadataout0    ;
+; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ram_block1a29 ; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|q_a[29] ; portadataout0    ;
+; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ram_block1a30 ; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|q_a[30] ; portadataout0    ;
+; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ram_block1a31 ; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|q_a[31] ; portadataout0    ;
+; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_7|int_q                                                       ; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_7|int_q                                                 ; regout           ;
+; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_6|int_q                                                       ; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_6|int_q                                                 ; regout           ;
+; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_5|int_q                                                       ; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_5|int_q                                                 ; regout           ;
+; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_1|int_q                                                       ; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_1|int_q                                                 ; regout           ;
+; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_0|int_q                                                       ; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_0|int_q                                                 ; regout           ;
+; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:7:adder_i|int_CarryOut1               ; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:7:adder_i|int_CarryOut1         ; out0             ;
+; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:6:adder_i|int_CarryOut3               ; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:6:adder_i|int_CarryOut3         ; out0             ;
+; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:6:adder_i|int_CarryOut1               ; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:6:adder_i|int_CarryOut1         ; out0             ;
+; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:5:adder_i|int_CarryOut3               ; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:5:adder_i|int_CarryOut3         ; out0             ;
++--------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                                                                                                         ;
++--------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                                ; Output Port Name                                                                                                   ; Output Port Type ;
++--------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+------------------+
+; |singleCycleProc|MuxOut[0]                                                                                               ; |singleCycleProc|MuxOut[0]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[1]                                                                                               ; |singleCycleProc|MuxOut[1]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[2]                                                                                               ; |singleCycleProc|MuxOut[2]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[3]                                                                                               ; |singleCycleProc|MuxOut[3]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[4]                                                                                               ; |singleCycleProc|MuxOut[4]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[5]                                                                                               ; |singleCycleProc|MuxOut[5]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[6]                                                                                               ; |singleCycleProc|MuxOut[6]                                                                                         ; pin_out          ;
+; |singleCycleProc|MuxOut[7]                                                                                               ; |singleCycleProc|MuxOut[7]                                                                                         ; pin_out          ;
+; |singleCycleProc|InstructionOut[0]                                                                                       ; |singleCycleProc|InstructionOut[0]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[1]                                                                                       ; |singleCycleProc|InstructionOut[1]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[2]                                                                                       ; |singleCycleProc|InstructionOut[2]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[3]                                                                                       ; |singleCycleProc|InstructionOut[3]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[4]                                                                                       ; |singleCycleProc|InstructionOut[4]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[5]                                                                                       ; |singleCycleProc|InstructionOut[5]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[6]                                                                                       ; |singleCycleProc|InstructionOut[6]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[7]                                                                                       ; |singleCycleProc|InstructionOut[7]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[8]                                                                                       ; |singleCycleProc|InstructionOut[8]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[9]                                                                                       ; |singleCycleProc|InstructionOut[9]                                                                                 ; pin_out          ;
+; |singleCycleProc|InstructionOut[10]                                                                                      ; |singleCycleProc|InstructionOut[10]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[11]                                                                                      ; |singleCycleProc|InstructionOut[11]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[12]                                                                                      ; |singleCycleProc|InstructionOut[12]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[13]                                                                                      ; |singleCycleProc|InstructionOut[13]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[14]                                                                                      ; |singleCycleProc|InstructionOut[14]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[15]                                                                                      ; |singleCycleProc|InstructionOut[15]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[16]                                                                                      ; |singleCycleProc|InstructionOut[16]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[17]                                                                                      ; |singleCycleProc|InstructionOut[17]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[18]                                                                                      ; |singleCycleProc|InstructionOut[18]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[19]                                                                                      ; |singleCycleProc|InstructionOut[19]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[20]                                                                                      ; |singleCycleProc|InstructionOut[20]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[21]                                                                                      ; |singleCycleProc|InstructionOut[21]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[22]                                                                                      ; |singleCycleProc|InstructionOut[22]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[23]                                                                                      ; |singleCycleProc|InstructionOut[23]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[24]                                                                                      ; |singleCycleProc|InstructionOut[24]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[25]                                                                                      ; |singleCycleProc|InstructionOut[25]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[26]                                                                                      ; |singleCycleProc|InstructionOut[26]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[27]                                                                                      ; |singleCycleProc|InstructionOut[27]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[28]                                                                                      ; |singleCycleProc|InstructionOut[28]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[29]                                                                                      ; |singleCycleProc|InstructionOut[29]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[30]                                                                                      ; |singleCycleProc|InstructionOut[30]                                                                                ; pin_out          ;
+; |singleCycleProc|InstructionOut[31]                                                                                      ; |singleCycleProc|InstructionOut[31]                                                                                ; pin_out          ;
+; |singleCycleProc|BranchOut                                                                                               ; |singleCycleProc|BranchOut                                                                                         ; pin_out          ;
+; |singleCycleProc|ZeroOut                                                                                                 ; |singleCycleProc|ZeroOut                                                                                           ; pin_out          ;
+; |singleCycleProc|MemWriteOut                                                                                             ; |singleCycleProc|MemWriteOut                                                                                       ; pin_out          ;
+; |singleCycleProc|RegWriteOut                                                                                             ; |singleCycleProc|RegWriteOut                                                                                       ; pin_out          ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b31|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b31|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b30|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b30|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b29|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b29|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b28|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b28|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b27|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b27|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b26|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b26|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b25|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b25|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b24|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b24|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b23|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b23|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b22|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b22|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b21|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b21|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b20|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b20|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b19|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b19|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b18|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b18|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b17|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b17|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b16|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b16|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b15|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b15|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b14|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b14|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b13|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b13|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b12|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b12|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b11|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b11|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b10|int_q        ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b10|int_q  ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b9|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b9|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b8|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b8|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b7|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b7|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b6|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b6|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b5|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b5|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b4|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b4|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b3|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b3|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b2|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b2|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b1|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b1|int_q   ; regout           ;
+; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b0|int_q         ; |singleCycleProc|IF_ID_PipeLineRegister:IF_ID_PipeLineReg|thirtytwobitregister:instr_reg_inst|enARdFF_2:b0|int_q   ; regout           ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~0                                                                  ; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~0                                                            ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~1                                                                  ; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~1                                                            ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~2                                                                  ; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~2                                                            ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~3                                                                  ; |singleCycleProc|controlUnit:CPUControlUnit|int_rtype~3                                                            ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|o_ALUOp1                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|o_ALUOp1                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~0                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~0                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~1                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~1                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~2                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~2                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~3                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_lw~3                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|o_MemRead                                                                    ; |singleCycleProc|controlUnit:CPUControlUnit|o_MemRead                                                              ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_sw~0                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_sw~0                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_sw~1                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_sw~1                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_sw~2                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|int_sw~2                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|o_MemWrite                                                                   ; |singleCycleProc|controlUnit:CPUControlUnit|o_MemWrite                                                             ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_beq~0                                                                    ; |singleCycleProc|controlUnit:CPUControlUnit|int_beq~0                                                              ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|int_beq~1                                                                    ; |singleCycleProc|controlUnit:CPUControlUnit|int_beq~1                                                              ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|o_ALUOp0                                                                     ; |singleCycleProc|controlUnit:CPUControlUnit|o_ALUOp0                                                               ; out0             ;
+; |singleCycleProc|controlUnit:CPUControlUnit|o_RegWrite                                                                   ; |singleCycleProc|controlUnit:CPUControlUnit|o_RegWrite                                                             ; out0             ;
+; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ram_block1a26 ; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|q_a[26] ; portadataout0    ;
+; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ram_block1a27 ; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|q_a[27] ; portadataout0    ;
+; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ram_block1a28 ; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|q_a[28] ; portadataout0    ;
+; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ram_block1a29 ; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|q_a[29] ; portadataout0    ;
+; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ram_block1a30 ; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|q_a[30] ; portadataout0    ;
+; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|ram_block1a31 ; |singleCycleProc|instrMem:MemoryInstruction|altsyncram:altsyncram_component|altsyncram_4b91:auto_generated|q_a[31] ; portadataout0    ;
+; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_7|int_q                                                       ; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_7|int_q                                                 ; regout           ;
+; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_6|int_q                                                       ; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_6|int_q                                                 ; regout           ;
+; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_5|int_q                                                       ; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_5|int_q                                                 ; regout           ;
+; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_1|int_q                                                       ; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_1|int_q                                                 ; regout           ;
+; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_0|int_q                                                       ; |singleCycleProc|register8bit:ProgramCounter|enARdFF_2:DFF_0|int_q                                                 ; regout           ;
+; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:7:adder_i|int_CarryOut1               ; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:7:adder_i|int_CarryOut1         ; out0             ;
+; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:6:adder_i|int_CarryOut3               ; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:6:adder_i|int_CarryOut3         ; out0             ;
+; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:6:adder_i|int_CarryOut1               ; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:6:adder_i|int_CarryOut1         ; out0             ;
+; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:5:adder_i|int_CarryOut3               ; |singleCycleProc|adder8bit:ProgramCounterAdder|oneBitAdder:\eightBitAdderGenerator:5:adder_i|int_CarryOut3         ; out0             ;
++--------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Apr 02 14:30:33 2025
+Info: Command: quartus_sim --simulation_results_format=VWF singleCycleProc -c singleCycleProc_qsim
+Info (324025): Using vector source file "H:/hmanh018/Documents/CEG 3156/CEG3156-W25/Labs/Lab 2/Waveform1.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is       8.40 %
+Info (328052): Number of transitions in simulation is 71
+Info (324045): Vector file singleCycleProc_qsim.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4478 megabytes
+    Info: Processing ended: Wed Apr 02 14:30:35 2025
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
